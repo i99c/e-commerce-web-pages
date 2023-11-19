@@ -1,0 +1,531 @@
+#slide1 {
+    width: 980px;
+    height: 650px;
+}
+#slide2 {
+    width: 980px;
+    height: 650px;
+}
+#slide3 {
+    width: 980px;
+    height: 650px;
+}
+#slide4 {
+    width: 980px;
+    height: 650px;
+}
+#slide5 {
+    width: 980px;
+    height: 650px;
+}
+#slide6 {
+    width: 980px;
+    height: 650px;
+}
+#slide7 {
+    width: 980px;
+    height: 650px;
+}
+#slide8 {
+    width: 980px;
+    height: 650px;
+}
+#slide9 {
+    width: 980px;
+    height: 650px;
+}
+#slide10 {
+    width: 980px;
+    height: 650px;
+}
+#slide11 {
+    width: 980px;
+    height: 650px;
+}
+#slide12 {
+    width: 980px;
+    height: 650px;
+}
+
+/* Resimler */
+#resimbir {
+    width: 100%;
+    height: 55%;
+}
+
+#resimiki {
+    width: 100%;
+    height: 55%;
+}
+
+#resimuc {
+    width: 100%;
+    height: 55%;
+}
+
+#resimdort {
+    width: 100%;
+    height: 55%;
+}
+
+#resimbes {
+    width: 100%;
+    height: 55%;
+}
+
+#resimalti {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyedi {
+    width: 100%;
+    height: 55%;
+}
+
+#resimsekiz {
+    width: 100%;
+    height: 55%;
+}
+
+#resimdokuz {
+    width: 100%;
+    height: 55%;
+}
+
+#resimon {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonbir {
+    width: 100%;
+    height: 55%;
+}
+
+#resimoniki {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonuc {
+    width: 100%;
+    height: 55%;
+}
+
+#resimondort {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonbes {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonalti {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonyedi {
+    width: 100%;
+    height: 55%;
+}
+
+#resimonsekiz {
+    width: 100%;
+    height: 55%;
+}
+
+#resimondokuz {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyirmi {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyirmibir {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyirmiiki {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyirmiuc {
+    width: 100%;
+    height: 55%;
+}
+
+#resimyirmidort {
+    width: 100%;
+    height: 55%;
+}
+
+/* #boyut{
+    width: 300px;
+    height: 400px;
+    
+} */
+
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.shopping-card {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+
+/* Buton Başlangıç */
+.pushable {
+    position: relative;
+    background: transparent;
+    padding: 0px;
+    border: none;
+    cursor: pointer;
+    outline-offset: 4px;
+    outline-color: deeppink;
+    transition: filter 250ms;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.shadow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: hsl(226, 25%, 69%);
+    border-radius: 8px;
+    filter: blur(2px);
+    will-change: transform;
+    transform: translateY(2px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.edge {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 8px;
+    background: linear-gradient(to right,
+            hsl(248, 39%, 39%) 0%,
+            hsl(248, 39%, 49%) 8%,
+            hsl(248, 39%, 39%) 92%,
+            hsl(248, 39%, 29%) 100%);
+}
+
+.front {
+    display: block;
+    position: relative;
+    border-radius: 8px;
+    background: hsl(248, 53%, 58%);
+    padding: 16px 32px;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1rem;
+    transform: translateY(-4px);
+    transition: transform 600ms cubic-bezier(0.3, 0.7, 0.4, 1);
+}
+
+.pushable:hover {
+    filter: brightness(110%);
+}
+
+.pushable:hover .front {
+    transform: translateY(-6px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .front {
+    transform: translateY(-2px);
+    transition: transform 34ms;
+}
+
+.pushable:hover .shadow {
+    transform: translateY(4px);
+    transition: transform 250ms cubic-bezier(0.3, 0.7, 0.4, 1.5);
+}
+
+.pushable:active .shadow {
+    transform: translateY(1px);
+    transition: transform 34ms;
+}
+
+.pushable:focus:not(:focus-visible) {
+    outline: none;
+}
+
+.gallery-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 800px;
+    /* Adjust this value based on your layout */
+    margin: 20px auto;
+}
+
+.gallery-image {
+    width: calc(33.33% - 10px);
+    /* Adjust the width based on your layout */
+    margin-bottom: 10px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+/* Buton Bitiş */
+/* Size Kısmı */
+.size-options {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+}
+
+.size-option {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.size-option:hover {
+    background-color: #f0f0f0;
+}
+
+/* Satın Al Butonu */
+.cta {
+    border: none;
+    background: none;
+}
+
+.cta span {
+    padding-bottom: 7px;
+    letter-spacing: 4px;
+    font-size: 14px;
+    padding-right: 15px;
+    text-transform: uppercase;
+}
+
+.cta svg {
+    transform: translateX(-8px);
+    transition: all 0.3s ease;
+}
+
+.cta:hover svg {
+    transform: translateX(0);
+}
+
+.cta:active svg {
+    transform: scale(0.9);
+}
+
+.hover-underline-animation {
+    position: relative;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.hover-underline-animation:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #000000;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.cta:hover .hover-underline-animation:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/*  */
+.btn-conteiner {
+    display: flex;
+    justify-content: center;
+    --color-text: #ffffff;
+    --color-background: #ff135a;
+    --color-outline: #ff145b80;
+    --color-shadow: #00000080;
+  }
+  
+  .btn-content {
+    display: flex;
+    align-items: center;
+    padding: 5px 30px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 30px;
+    color: var(--color-text);
+    background: var(--color-background);
+    transition: 1s;
+    border-radius: 100px;
+    box-shadow: 0 0 0.2em 0 var(--color-background);
+  }
+  
+  .btn-content:hover, .btn-content:focus {
+    transition: 0.5s;
+    -webkit-animation: btn-content 1s;
+    animation: btn-content 1s;
+    outline: 0.1em solid transparent;
+    outline-offset: 0.2em;
+    box-shadow: 0 0 0.4em 0 var(--color-background);
+  }
+  
+  .btn-content .icon-arrow {
+    transition: 0.5s;
+    margin-right: 0px;
+    transform: scale(0.6);
+  }
+  
+  .btn-content:hover .icon-arrow {
+    transition: 0.5s;
+    margin-right: 25px;
+  }
+  
+  .icon-arrow {
+    width: 20px;
+    margin-left: 15px;
+    position: relative;
+    top: 6%;
+  }
+    
+
+#cartList {
+    background-color: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 50px;
+    right: 0;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    max-height: 400px; /* veya istediğiniz bir değer */
+    overflow-y: auto; /* Yükseklik sınıra ulaşıldığında kaydırma çubuğunu göster */
+}
+
+#cartList.show {
+    display: block !important;
+    width: 700px; /* veya istediğiniz bir değer */
+}
+
+.shopping-cart-list .row {
+    margin-bottom: 10px; /* Ürünler arasına bir boşluk ekleyin */
+}
+
+.shopping-cart-list img {
+    max-width: 100%; /* Resimleri maksimum genişlikte gösterin */
+    height: auto; /* Resim oranını koruyun */
+}
+
+.title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+/* Yeni Buton */
+
+.button {
+    background-color: #ffffff00;
+    color: #000000;
+    width: 400px;
+    height: 40px;
+    border: #3654ff 0.2em solid;
+    border-radius: 11px;
+    text-align: right;
+    transition: all 0.6s ease;
+  }
+  
+  .button:hover {
+    background-color: #3654ff;
+    cursor: pointer;
+  }
+  
+  .button svg {
+    width: 1.6em;
+    margin: -0.2em 0.8em 1em;
+    position: absolute;
+    display: flex;
+    transition: all 0.6s ease;
+  }
+  
+  .button:hover svg {
+    transform: translateX(5px);
+  }
+  
+  .text {
+    margin: 0 1.5em
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+  }
+
+  .modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+  }
+
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
