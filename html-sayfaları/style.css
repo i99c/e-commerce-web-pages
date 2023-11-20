@@ -724,4 +724,7 @@ footer {
     color: white;
   }
   
-  
+    #container {
+        display: flex;
+        margin-right: 100px;
+    }  
