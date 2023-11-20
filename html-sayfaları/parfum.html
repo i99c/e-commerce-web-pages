@@ -14,81 +14,129 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
     </head>
     <body>
-
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
-                <a class="navbar-brand" href="index.html"><img src="YENİ LOGO.png" alt="logo"></a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand" href="index.html"><img
+                        src="YENİ LOGO.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="index.html">Anasayfa</a>
+                        <a class="nav-link active" aria-current="page"
+                            href="index.html">Anasayfa</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="kadin.html">Kadın</a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ürünler
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Kadın Giyim
                         </a>
-                        <ul class="dropdown-menu">
+                        <ul id="boyut" class="dropdown-menu">
                             <li><a class="dropdown-item" href="elbise.html">Elbise</a></li>
                             <li><a class="dropdown-item" href="etek.html">Etek</a></li>
                             <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
                             <li><a class="dropdown-item" href="ceket.html">Ceket</a></li>
-                            <li><a class="dropdown-item" href="ofis-sikligi.html">Ofis şıklığı</a></li>
+                            <li><a class="dropdown-item"
+                                    href="ofis-sikligi.html">Ofis şıklığı</a></li>
                             <li><a class="dropdown-item" href="pantolon.html">Pantolon</a></li>
                             <li><a class="dropdown-item" href="yelek.html">Yelek</a></li>
                             <li><a class="dropdown-item" href="gomlek.html">Gömlek</a></li>
                             <li><a class="dropdown-item" href="party.html">Party</a></li>
+                            <li><a class="dropdown-item"
+                                    href="kadin-ayakkabi.html">Ayakkabı</a></li>
                         </ul>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="erkek.html">Erkek</a>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Ürün
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Erkek Giyim
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="jeans-erkek.html">Jeans</a></li>
                             <li><a class="dropdown-item" href="ceket-erkek.html">Ceket</a></li>
-                            <li><a class="dropdown-item" href="ofis-sikligi-erkek.html">Ofis şıklığı</a></li>
-                            <li><a class="dropdown-item" href="pantolon-erkek.html">Pantolon</a></li>
+                            <li><a class="dropdown-item"
+                                    href="ofis-sikligi-erkek.html">Ofis şıklığı</a></li>
+                            <li><a class="dropdown-item"
+                                    href="pantolon-erkek.html">Pantolon</a></li>
                             <li><a class="dropdown-item" href="yelek-erkek.html">Yelek</a></li>
-                            <li><a class="dropdown-item" href="gomlek-erkek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item"
+                                    href="gomlek-erkek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item"
+                                    href="erkek-ayakkabı.html">Ayakkabı</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="aksesuar.html" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle" href="aksesuar.html"
+                            role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
                             Aksesuar
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="taki.html">Takı</a></li>
                             <li><a class="dropdown-item" href="parfum.html">Parfüm</a></li>
-                            <li><a class="dropdown-item" href="beauty-kadin.html">Beauty</a></li>
+                            <li><a class="dropdown-item"
+                                    href="beauty-kadin.html">Beauty</a></li>
                             <li><a class="dropdown-item" href="diğer.html">Diğer</a></li>
                         </ul>
                     </li>
                 </ul>
-
-                    <!-- Shopping Card -->
-                    <nav class="shopping-card position-relative">
-                        <div class="shopping-card position-relative">
-                            <button type="button"
-                                class="btn-cart btn-bg-light btn-primary position-relative"
-                                id="cartBtn">
-                                <i class="fas fa-shopping-cart"></i>
-                                <span id="item-count"
-                                    class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
-                            </button>
-                            <div class="shopping-cart-list bg-dark d-none"
-                                id="cartList">
+    
+                <header class="p-3 text-bg-dark">
+                    <div class="container">
+                        <div
+                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                            <a href="/"
+                                class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                                <svg class="bi me-2" width="40" height="32"
+                                    role="img" aria-label="Bootstrap"><use
+                                        xlink:href="#bootstrap"></use></svg>
+                            </a>
+    
+                            
+    
+                            <div class="text-end">
+                                <button type="button"
+                                    class="btn btn-outline-light me-2">Login</button>
+                                <button type="button" class="btn btn-warning">Sign-up</button>
                             </div>
                         </div>
-                    </nav>
+                    </div>
+                </header>
+            </div>
+            <nav class="shopping-card position-relative pe-3 me-3">
+                <div class="shopping-card position-relative">
+                    <button type="button"
+                        class="btn-cart btn-bg-light btn-primary position-relative"
+                        id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="item-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
+                    </button>
+                    <div class="shopping-cart-list bg-dark d-none"
+                        id="cartList">
+                    </div>
+                </div>
+    
+            </nav>
+            <div class="navbar position-relative pe-3 me-3">
+                <button type="button" class="btn-cart btn-bg-light btn-primary position-relative" id="cartBtn">
+                    <i id="bildirim" class="fa-regular fa-bell fa-bounce me-3" style="color: #ee0c0c;"></i>
+                    <span id="item-count" class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
+                </button>
+                <div id="bildirim-alani"> <!-- Bildirim alanı burada -->
+                    Hoşgeldiniz!
                 </div>
             </div>
         </nav>
