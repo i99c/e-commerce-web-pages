@@ -87,3 +87,24 @@ function updateCartFromLocalStorage() {
 }
 
 
+
+// JavaScript kodu buraya eklenecek
+
+
+let bildirimIcon = document.getElementById('bildirim');
+    let bildirimAlani = document.getElementById('bildirim-alani');
+    let itemCount = document.getElementById('item-count');
+
+    let kullaniciSayisi = 0;
+
+    bildirimIcon.addEventListener('click', function() {
+        // Tıklama işlemleri buraya eklenir
+        bildirimAlani.style.display = 'block';
+        kullaniciSayisi++;
+        itemCount.innerText = kullaniciSayisi;
+
+        // Simülasyon amaçlı 2 saniye sonra bildirimi kapat
+        setTimeout(function() {
+            bildirimAlani.style.display = 'none';
+        }, 2000);
+    });

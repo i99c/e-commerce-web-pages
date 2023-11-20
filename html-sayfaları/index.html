@@ -94,7 +94,7 @@
                         </ul>
                     </li>
                 </ul>
-
+    
                 <header class="p-3 text-bg-dark">
                     <div class="container">
                         <div
@@ -105,9 +105,9 @@
                                     role="img" aria-label="Bootstrap"><use
                                         xlink:href="#bootstrap"></use></svg>
                             </a>
-
+    
                             
-
+    
                             <div class="text-end">
                                 <button type="button"
                                     class="btn btn-outline-light me-2">Login</button>
@@ -117,7 +117,7 @@
                     </div>
                 </header>
             </div>
-            <nav class="shopping-card position-relative pe-3">
+            <nav class="shopping-card position-relative pe-3 me-3">
                 <div class="shopping-card position-relative">
                     <button type="button"
                         class="btn-cart btn-bg-light btn-primary position-relative"
@@ -130,8 +130,17 @@
                         id="cartList">
                     </div>
                 </div>
-
+    
             </nav>
+            <div class="navbar position-relative pe-3 me-3">
+                <button type="button" class="btn-cart btn-bg-light btn-primary position-relative" id="cartBtn">
+                    <i id="bildirim" class="fa-regular fa-bell fa-bounce me-3" style="color: #ee0c0c;"></i>
+                    <span id="item-count" class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
+                </button>
+                <div id="bildirim-alani"> <!-- Bildirim alanı burada -->
+                    Hoşgeldiniz!
+                </div>
+            </div>
         </nav>
 
         <div class="container">

@@ -852,3 +852,20 @@ footer {
         color: rgba(156, 163, 175, 1);
       }
       
+     /* Ek stil özellikleri buraya eklenebilir */
+     #bildirim:hover {
+        cursor: pointer;
+        transform: scale(1.2); /* Örneğin, tıklama efekti olarak büyütme ekleyebilirsiniz */
+    }
+
+    #bildirim-alani {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+    }
