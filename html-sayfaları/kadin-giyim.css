@@ -475,3 +475,12 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+
+  #payment-button-container {
+    margin-top: 20px;
+  }
+  
+  #total-container {
+    margin-top: 20px;
+  }

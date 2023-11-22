@@ -57,34 +57,54 @@ document.getElementById('cartBtn').addEventListener('click', function () {
 });
 
 
+// ... Diğer kodlar
+
+// ... Diğer kodlar
+
+function calculateTotal() {
+  let cartData = getCartFromLocalStorage();
+  let total = 0;
+
+  for (let productId in cartData) {
+    let { price } = cartData[productId];
+    total += parseFloat(price);
+  }
+
+  return total.toFixed(2);
+}
+
+function addPaymentButton() {
+  let paymentButtonContainer = document.getElementById('payment-button-container');
+
+  let paymentButton = document.createElement('button');
+  paymentButton.innerText = 'Ödeme Yap';
+  paymentButton.addEventListener('click', function () {
+    redirectToCreditCardPage();
+  });
+
+  paymentButtonContainer.appendChild(paymentButton);
+}
+
+function addTotalElement() {
+  let totalContainer = document.getElementById('total-container');
+  let total = calculateTotal();
+
+  let totalElement = document.createElement('div');
+  totalElement.innerText = `Toplam: ${total} TL`;
+
+  totalContainer.appendChild(totalElement);
+}
+
+function redirectToCreditCardPage() {
+  console.log('Ödeme yap butonuna tıklandı. Kredi kartı sayfasına yönlendiriliyor...');
+  // Burada gerçek bir kredi kartı sayfasına yönlendirmek için uygun URL kullanılabilir.
+}
+
 window.onload = function () {
   addExtraProducts();
-  updateCartFromLocalStorage(); 
+  updateCartFromLocalStorage();
+  addPaymentButton();
+  addTotalElement();
 };
 
-function updateCartFromLocalStorage() {
-  let cartData = getCartFromLocalStorage(); // FONKSİYON EKLE
-  if (cartData.length > 0) {
-    updateCartUI();
-  }
-}
-
-
-addExtraProducts(); //FONKSİYON EKLE
-
-
-
-function updateCartFromLocalStorage() {
-  let cartData = getCartFromLocalStorage();
-  if (cartData.length > 0) {
-    updateCartUI();
-
-    for (let productId in cartData) {
-      let { productName, size, price, imageUrl } = cartData[productId];
-      updateCartContent(productName, size, price, imageUrl);
-    }
-  }
-}
-
-// localStorage.clear()
-
+// ... Diğer kodlar
