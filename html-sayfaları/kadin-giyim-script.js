@@ -40,11 +40,13 @@ function updateCartCount() {
   itemCountElement.innerText = currentItemCount - 1;
 }
 
-function saveCartToLocalStorage() {
+function saveCartToLocalStorage(productName, size, price, imageUrl) {
   let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
   let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem('cartData', JSON.stringify(cartData));
+
+  return { productName, size, price, imageUrl }; // Burada değerleri döndürüyoruz
 }
 
 function selectSize(productName, size, price, imageUrl) {
@@ -57,54 +59,40 @@ document.getElementById('cartBtn').addEventListener('click', function () {
 });
 
 
-// ... Diğer kodlar
 
-// ... Diğer kodlar
-
-function calculateTotal() {
-  let cartData = getCartFromLocalStorage();
-  let total = 0;
-
-  for (let productId in cartData) {
-    let { price } = cartData[productId];
-    total += parseFloat(price);
-  }
-
-  return total.toFixed(2);
-}
-
-function addPaymentButton() {
-  let paymentButtonContainer = document.getElementById('payment-button-container');
-
-  let paymentButton = document.createElement('button');
-  paymentButton.innerText = 'Ödeme Yap';
-  paymentButton.addEventListener('click', function () {
-    redirectToCreditCardPage();
-  });
-
-  paymentButtonContainer.appendChild(paymentButton);
-}
-
-function addTotalElement() {
-  let totalContainer = document.getElementById('total-container');
-  let total = calculateTotal();
-
-  let totalElement = document.createElement('div');
-  totalElement.innerText = `Toplam: ${total} TL`;
-
-  totalContainer.appendChild(totalElement);
-}
-
-function redirectToCreditCardPage() {
-  console.log('Ödeme yap butonuna tıklandı. Kredi kartı sayfasına yönlendiriliyor...');
-  // Burada gerçek bir kredi kartı sayfasına yönlendirmek için uygun URL kullanılabilir.
-}
 
 window.onload = function () {
   addExtraProducts();
-  updateCartFromLocalStorage();
-  addPaymentButton();
-  addTotalElement();
+  // updateCartFromLocalStorage();
+ 
 };
 
-// ... Diğer kodlar
+
+
+function addExtraProducts() {
+  // Sayfadaki her ürün için bu fonksiyonu çağırabilirsiniz
+  let productElements = document.querySelectorAll('.product'); //  .product sınıfına sahip tüm ürünleri ekleriz
+
+  productElements.forEach(productElement => {
+    let productName = productElement.querySelector('.product-name').innerText;
+    let size = productElement.querySelector('.product-size').innerText;
+    let price = parseFloat(productElement.querySelector('.product-price').innerText);
+    let imageUrl = productElement.querySelector('.product-image').getAttribute('src');
+
+    let savedData = saveCartToLocalStorage({ productName, size, price, imageUrl });
+    updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
+  });
+}
+
+// saveCartToLocalStorage fonksiyonu ekledim
+function saveCartToLocalStorage(productElement) {
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  let productId = Date.now().toString();
+  cartData[productId] = productData;
+  localStorage.setItem('cartData', JSON.stringify(cartData));
+
+  return productData; // Burada değerleri döndürüyoruz
+}
+
+
+// localStorage.removeItem('cartData'); // "cartData'yı temizlemek için"

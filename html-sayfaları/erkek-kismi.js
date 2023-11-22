@@ -1,6 +1,6 @@
 function addToCart(productName, size, price, imageUrl) {
   updateCartContent(productName, size, price, imageUrl);
-  saveCartToLocalStorage(productName, size, price, imageUrl);
+  saveCartToLocalStorage();
 }
 
 function updateCartContent(productName, size, price, imageUrl) {
@@ -45,6 +45,8 @@ function saveCartToLocalStorage(productName, size, price, imageUrl) {
   let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem('cartData', JSON.stringify(cartData));
+
+  return { productName, size, price, imageUrl }; // Burada değerleri döndürüyoruz
 }
 
 function selectSize(productName, size, price, imageUrl) {
@@ -56,31 +58,31 @@ document.getElementById('cartBtn').addEventListener('click', function () {
   cartList.classList.toggle('show');
 });
 
-function updateCartFromLocalStorage() {
-  let cartData = getCartFromLocalStorage();
-  if (cartData && Object.keys(cartData).length > 0) {
-    updateCartUI();
 
-    for (let productId in cartData) {
-      let { productName, size, price, imageUrl } = cartData[productId];
-      updateCartContent(productName, size, price, imageUrl);
-    }
-  }
-}
+
 
 window.onload = function () {
   addExtraProducts();
-  updateCartFromLocalStorage(); 
+  updateCartFromLocalStorage();
+ 
 };
 
-addExtraProducts();
+
 
 function addExtraProducts() {
   // Ekstra ürünleri ekleyen kod buraya gelecek
-  
+  let savedData = saveCartToLocalStorage(`${productName}, ${size}, ${price}, ${imageUrl}`);
+  updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
 }
 
 function getCartFromLocalStorage() {
   // Local storage'dan sepet bilgilerini çeken kod buraya gelecek
-}
+  // Bu fonksiyonu düzeltebilirsiniz, ancak bu örnekte şu an kullanılmıyor.
 
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  let productId = Date.now().toString();
+  cartData[productId] = { productName, size, price, imageUrl };
+  localStorage.setItem('cartData', JSON.stringify(cartData));
+
+
+}

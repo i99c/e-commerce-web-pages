@@ -40,11 +40,13 @@ function updateCartCount() {
   itemCountElement.innerText = currentItemCount - 1;
 }
 
-function saveCartToLocalStorage() {
+function saveCartToLocalStorage(productName, size, price, imageUrl) {
   let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
   let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem('cartData', JSON.stringify(cartData));
+
+  return { productName, size, price, imageUrl }; // Burada değerleri döndürüyoruz
 }
 
 function selectSize(productName, size, price, imageUrl) {
@@ -57,57 +59,33 @@ document.getElementById('cartBtn').addEventListener('click', function () {
 });
 
 
+
+
 window.onload = function () {
   addExtraProducts();
-  updateCartFromLocalStorage(); 
+  updateCartFromLocalStorage();
+ 
 };
 
-function updateCartFromLocalStorage() {
-  let cartData = getCartFromLocalStorage();
-  if (cartData.length > 0) {
-    updateCartUI();
-  }
+
+
+function addExtraProducts() {
+  // Ekstra ürünleri ekleyen kod buraya gelecek
+  let savedData = saveCartToLocalStorage(`${productName}, ${size}, ${price}, ${imageUrl}`);
+  updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
 }
 
+function getCartFromLocalStorage() {
+  // Local storage'dan sepet bilgilerini çeken kod buraya gelecek
+  // Bu fonksiyonu düzeltebilirsiniz, ancak bu örnekte şu an kullanılmıyor.
 
-addExtraProducts();
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  let productId = Date.now().toString();
+  cartData[productId] = { productName, size, price, imageUrl };
+  localStorage.setItem('cartData', JSON.stringify(cartData));
 
 
-
-function updateCartFromLocalStorage() {
-  let cartData = getCartFromLocalStorage();
-  if (cartData.length > 0) {
-    updateCartUI();
-
-    for (let productId in cartData) {
-      let { productName, size, price, imageUrl } = cartData[productId];
-      updateCartContent(productName, size, price, imageUrl);
-    }
-  }
 }
 
 
 
-// JavaScript kodu buraya eklenecek
-
-
-let bildirimIcon = document.getElementById('bildirim');
-    let bildirimAlani = document.getElementById('bildirim-alani');
-    let itemCount = document.getElementById('item-count');
-
-    let kullaniciSayisi = 0;
-
-    bildirimIcon.addEventListener('click', function() {
-        // Tıklama işlemleri buraya eklenir
-        bildirimAlani.style.display = 'block';
-        kullaniciSayisi++;
-        itemCount.innerText = kullaniciSayisi;
-
-        // Simülasyon amaçlı 2 saniye sonra bildirimi kapat
-        setTimeout(function() {
-            bildirimAlani.style.display = 'none';
-        }, 2000);
-    });
-
-
-    
