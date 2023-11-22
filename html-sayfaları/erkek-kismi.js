@@ -83,3 +83,4 @@ function addExtraProducts() {
 function getCartFromLocalStorage() {
   // Local storage'dan sepet bilgilerini çeken kod buraya gelecek
 }
+

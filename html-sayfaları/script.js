@@ -108,3 +108,6 @@ let bildirimIcon = document.getElementById('bildirim');
             bildirimAlani.style.display = 'none';
         }, 2000);
     });
+
+
+    
