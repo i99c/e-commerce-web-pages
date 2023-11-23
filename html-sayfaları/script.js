@@ -1,6 +1,6 @@
 function addToCart(productName, size, price, imageUrl) {
   updateCartContent(productName, size, price, imageUrl);
-  saveCartToLocalStorage();
+  saveCartToLocalStorage(productName, size, price, imageUrl);
 }
 
 function updateCartContent(productName, size, price, imageUrl) {
@@ -22,16 +22,39 @@ function updateCartContent(productName, size, price, imageUrl) {
           <div class="price">${price} TL</div>
       </div>
       <div class="col-md-1">
-          <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem(this)"></i>
+          <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productName}', '${size}')"></i>
       </div>
   `;
   cartList.appendChild(newItem);
 }
 
-function removeCartItem(clickedIcon) {
-  let cartItem = clickedIcon.closest('.row');
-  cartItem.remove();
-  updateCartCount();
+function removeCartItem(productName, size) {
+  let cartList = document.getElementById('cartList');
+  let cartItems = cartList.getElementsByClassName('row');
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let item = cartItems[i];
+    let title = item.querySelector('.title').innerText;
+
+    if (title === `${productName} - ${size}`) {
+      item.remove();
+      removeFromLocalStorage(productName, size);
+      updateCartCount();
+      break;
+    }
+  }
+}
+
+function removeFromLocalStorage(productName, size) {
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  for (let productId in cartData) {
+    let { productName: storedProductName, size: storedSize } = cartData[productId];
+    if (storedProductName === productName && storedSize === size) {
+      delete cartData[productId];
+      localStorage.setItem('cartData', JSON.stringify(cartData));
+      break;
+    }
+  }
 }
 
 function updateCartCount() {
@@ -45,8 +68,6 @@ function saveCartToLocalStorage(productName, size, price, imageUrl) {
   let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem('cartData', JSON.stringify(cartData));
-
-  return { productName, size, price, imageUrl }; // Burada değerleri döndürüyoruz
 }
 
 function selectSize(productName, size, price, imageUrl) {
@@ -58,34 +79,28 @@ document.getElementById('cartBtn').addEventListener('click', function () {
   cartList.classList.toggle('show');
 });
 
-
-
-
 window.onload = function () {
   addExtraProducts();
   updateCartFromLocalStorage();
- 
 };
 
-
+function updateCartFromLocalStorage() {
+  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
+  for (let productId in cartData) {
+    let { productName, size, price, imageUrl } = cartData[productId];
+    updateCartContent(productName, size, price, imageUrl);
+  }
+}
 
 function addExtraProducts() {
-  // Ekstra ürünleri ekleyen kod buraya gelecek
-  let savedData = saveCartToLocalStorage(`${productName}, ${size}, ${price}, ${imageUrl}`);
-  updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
+  let productElements = document.querySelectorAll('.product');
+  productElements.forEach(productElement => {
+    let productName = productElement.querySelector('.product-name').innerText;
+    let size = productElement.querySelector('.product-size').innerText;
+    let price = parseFloat(productElement.querySelector('.product-price').innerText);
+    let imageUrl = productElement.querySelector('.product-image').getAttribute('src');
+
+    let savedData = saveCartToLocalStorage(productName, size, price, imageUrl);
+    updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
+  });
 }
-
-function getCartFromLocalStorage() {
-  // Local storage'dan sepet bilgilerini çeken kod buraya gelecek
-  // Bu fonksiyonu düzeltebilirsiniz, ancak bu örnekte şu an kullanılmıyor.
-
-  let cartData = JSON.parse(localStorage.getItem('cartData')) || {};
-  let productId = Date.now().toString();
-  cartData[productId] = { productName, size, price, imageUrl };
-  localStorage.setItem('cartData', JSON.stringify(cartData));
-
-
-}
-
-
-
