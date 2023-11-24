@@ -104,3 +104,6 @@ function addExtraProducts() {
     updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
   });
 }
+
+
+// localStorage.removeItem('cartData'); // "cartData'yı temizlemek için"
