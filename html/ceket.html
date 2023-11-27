@@ -125,7 +125,26 @@
                     </button>
                     <div class="shopping-cart-list bg-dark d-none"
                         id="cartList">
+                        <div class="col-md-3">
+                            <div class="col-md-1">
+                                <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}')"></i>
+                            </div>
+                            <div class="quantity-section">
+                                <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
+                                <input i type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
+                                <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
+
+                               
+
+<!-- ... (diğer HTML kodları) ... -->
+
+                            </div>
+                        </div>
+                        
+                        </div>
+                        
                     </div>
+                    
                 </div>
 
             </nav>

@@ -484,3 +484,7 @@
   #total-container {
     margin-top: 20px;
   }
+
+  .quantity-input {
+    width: 50px; /* İstediğin genişliği ayarla */
+  }
