@@ -1,10 +1,23 @@
 function addToCart(productName, size, price, imageUrl) {
-  updateCartContent(productName, size, price, imageUrl);
-  saveCartToLocalStorage(productName, size, price, imageUrl);
+  updateCartContent(productName, size, price, imageUrl, 1); // Quantity başlangıç değeri 1 olarak ekleniyor.
+  saveCartToLocalStorage(productName, size, price, imageUrl, 1);
 }
 
-function updateCartContent(productName, size, price, imageUrl) {
+
+function updateCartContent(productName, size, price, imageUrl, quantity) {
   let itemCountElement = document.getElementById('item-count');
+  let newItem1 = document.createElement('div');
+  newItem1.innerHTML = `
+  <!-- ... -->
+  <div class="col-md-3">
+      <div class="quantity-section">
+          <button class="quantity-button" onclick="changeQuantity('${productName}', '${size}', 1)">+</button>
+          <span class="quantity" id="quantity_${productName.replace(/\s/g, '')}_${size}" data-productname="${productName}" data-size="${size}" data-quantity="${quantity}">${quantity}</span>
+          <button class="quantity-button" onclick="changeQuantity('${productName}', '${size}', -1)">-</button>
+      </div>
+  </div>
+  <!-- ... -->
+`;
   let currentItemCount = parseInt(itemCountElement.innerText);
   itemCountElement.innerText = currentItemCount + 1;
 
@@ -104,5 +117,6 @@ function addExtraProducts() {
     updateCartContent(savedData.productName, savedData.size, savedData.price, savedData.imageUrl);
   });
 }
+
 
 // localStorage.removeItem('cartData'); // "cartData'yı temizlemek için"
