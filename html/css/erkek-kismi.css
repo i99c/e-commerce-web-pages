@@ -473,3 +473,8 @@
     text-decoration: none;
     cursor: pointer;
   }
+
+
+  .quantity-input {
+    width: 50px; /* İstediğin genişliği ayarla */
+  }
