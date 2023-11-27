@@ -42,6 +42,12 @@ function updateCartContent(
   let newItem = document.createElement("div");
   newItem.id = `cartItem_${productId}`;
   newItem.classList.add("row", "align-items-center", "text-white-50");
+
+  // İlgili öğeyi kontrol et
+  let priceElement = document.createElement("div");
+  priceElement.classList.add("price");
+  priceElement.innerText = `${price.toFixed(2)} TL`;
+
   newItem.innerHTML = `
     <div class="col-md-3">
         <img src="${imageUrl}" alt="products" class="img-fluid">
@@ -50,45 +56,55 @@ function updateCartContent(
         <div class="title">${productName} - ${size}</div>
     </div>
     <div class="col-md-3">
-        <div class="price">${price} TL</div>
+        <div class="price">${price.toFixed(2)} TL</div>
     </div>
-    <div class="col-md-2">
+    <div class="col-md-3">
         <div class="quantity-section">
             <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
-            <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1" max="99">
+            <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
             <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
         </div>
     </div>
     <div class="col-md-1">
-        <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}')"></i>
+        <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}', '${imageUrl}')"></i>
     </div>
   `;
 
   // Yeni ürünü, totalSection'dan önce eklemek için
   cartList.insertBefore(newItem, totalSection);
+
+  // Toplam tutarı güncelle
+  updateTotalPrice();
 }
 
-function removeCartItem(productId) {
+
+
+
+function removeCartItem(productId, imageUrl) {
   let cartItem = document.getElementById(`cartItem_${productId}`);
   cartItem.remove();
 
   removeFromLocalStorage(productId);
   updateCartCount();
   updateTotalPrice(); // Toplam tutarı güncelle
+
+  // Eğer resimleri kaldırmak istiyorsanız, aşağıdaki satırı ekleyebilirsiniz
+  removeImageFromLocalStorage(imageUrl);
 }
 
-function removeFromLocalStorage(productName, size) {
+function removeImageFromLocalStorage(imageUrl) {
+  // Resimleri kaldırmak için gerekli işlemleri burada yapabilirsiniz
+}
+
+
+function removeFromLocalStorage(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
-  for (let productId in cartData) {
-    let { productName: storedProductName, size: storedSize } =
-      cartData[productId];
-    if (storedProductName === productName && storedSize === size) {
-      delete cartData[productId];
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-      break;
-    }
+  if (cartData.hasOwnProperty(productId)) {
+    delete cartData[productId];
+    localStorage.setItem("cartData", JSON.stringify(cartData));
   }
 }
+
 
 function updateCartCount() {
   let itemCountElement = document.getElementById("item-count");
@@ -192,6 +208,7 @@ function updateTotalPrice() {
 
   if (!cartItems || cartItems.length === 0) {
     console.error("No cart items found.");
+    totalElement.innerText = "0.00 TL"; // Sepet boşsa 0.00 TL olarak ayarla
     return;
   }
 
@@ -205,8 +222,11 @@ function updateTotalPrice() {
       console.error("Price element not found in cart item.");
       continue; // Geçerli ürünün fiyatı alınamazsa sonraki ürüne geç
     }
-
+    
     let priceText = priceElement.innerText;
+    
+    // ... Diğer kodlar
+    
 
     if (!priceText.includes(" TL")) {
       console.error("Invalid price format:", priceText);
@@ -227,53 +247,7 @@ function updateTotalPrice() {
 }
 
 
-function updateCartContent(
-  productId,
-  productName,
-  size,
-  price,
-  imageUrl,
-  quantity
-) {
-  let itemCountElement = document.getElementById("item-count");
-  let currentItemCount = parseInt(itemCountElement.innerText);
-  itemCountElement.innerText = currentItemCount + 1;
 
-  let cartList = document.getElementById("cartList");
-  let newItem = document.createElement("div");
-  newItem.id = `cartItem_${productId}`;
-  newItem.classList.add("row", "align-items-center", "text-white-50");
-  newItem.innerHTML = `
-    <div class="col-md-3">
-        <img src="${imageUrl}" alt="products" class="img-fluid">
-    </div>
-    <div class="col-md-5">
-        <div class="title">${productName} - ${size}</div>
-    </div>
-    <div class="col-md-3">
-        <div class="price">${price.toFixed(2)} TL</div>
-    </div>
-    <div class="col-md-3">
-        <div class="quantity-section">
-            <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
-            <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
-            <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
-        </div>
-    </div>
-    <div class="col-md-1">
-        <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}')"></i>
-    </div>
-  `;
-
-  // Yeni ürünü, totalSection'dan önce eklemek için
-  cartList.insertBefore(newItem, totalSection);
-
-  // Toplam tutarı güncelle
-  updateTotalPrice();
-}
-
-
-// Sepet içinde toplam tutarı gösteren alanın üzerine çizgi ekleyen hr elementi
 // Sepet içinde toplam tutarı gösteren alanın üzerine çizgi ekleyen hr elementi
 let totalSection = document.createElement("div");
 totalSection.classList.add("row", "align-items-center", "text-white-50", "mt-3");
