@@ -123,12 +123,17 @@
                         <span id="item-count"
                             class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
                     </button>
-                    <div class="shopping-cart-list bg-dark d-none"
+                    <div class="shopping-cart-list bg-dark d-none d-flex space-between"
                         id="cartList">
                         <div class="col-md-3">
-                            <div class="col-md-1">
-                                
-                            </div>
+                            <div class="col-md-4">
+                                <div id="cartList"></div>
+                              </div>
+                              <div class="col-md-4">
+                                <div style="color: white;" id="totalPrice" class="mb-3">Toplam Tutar :</div>
+                                <button id="checkoutBtn" class="btn btn-danger btn-block" onclick="checkout()">Satın Al</button>
+
+                              </div>
                           
                         
                         </div>

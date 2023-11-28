@@ -26,14 +26,7 @@ function changeQuantity(productId, change) {
   updateTotalPrice();
 }
 
-function updateCartContent(
-  productId,
-  productName,
-  size,
-  price,
-  imageUrl,
-  quantity
-) {
+function updateCartContent(productId, productName, size, price, imageUrl, quantity) {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
   itemCountElement.innerText = currentItemCount + 1;
@@ -42,6 +35,12 @@ function updateCartContent(
   let newItem = document.createElement("div");
   newItem.id = `cartItem_${productId}`;
   newItem.classList.add("row", "align-items-center", "text-white-50");
+
+  // İlgili öğeyi kontrol et
+  let priceElement = document.createElement("div");
+  priceElement.classList.add("price");
+  priceElement.innerText = `${price.toFixed(2)} TL`;
+
   newItem.innerHTML = `
     <div class="col-md-3">
         <img src="${imageUrl}" alt="products" class="img-fluid">
@@ -69,7 +68,11 @@ function updateCartContent(
 
   // Toplam tutarı güncelle
   updateTotalPrice();
+
+  // Resmi saklamak için örnek bir yöntem
+  saveImageToLocalStorage(productId, imageUrl);
 }
+
 
 
 
@@ -82,31 +85,32 @@ function removeCartItem(productId, imageUrl) {
   updateTotalPrice(); // Toplam tutarı güncelle
 
   // Eğer resimleri kaldırmak istiyorsanız, aşağıdaki satırı ekleyebilirsiniz
-  removeImageFromLocalStorage(imageUrl);
-}
-
-function removeImageFromLocalStorage(imageUrl) {
-  // Resimleri kaldırmak için gerekli işlemleri burada yapabilirsiniz
+  // removeImageFromLocalStorage(imageUrl);
 }
 
 
-function removeFromLocalStorage(productName, size) {
+
+
+
+function removeFromLocalStorage(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
-  for (let productId in cartData) {
-    let { productName: storedProductName, size: storedSize } =
-      cartData[productId];
-    if (storedProductName === productName && storedSize === size) {
-      delete cartData[productId];
-      localStorage.setItem("cartData", JSON.stringify(cartData));
-      break;
-    }
+  if (cartData.hasOwnProperty(productId)) {
+    delete cartData[productId];
+    localStorage.setItem("cartData", JSON.stringify(cartData));
   }
 }
+
 
 function updateCartCount() {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
   itemCountElement.innerText = currentItemCount - 1;
+}
+
+function saveImageToLocalStorage(productId, imageUrl) {
+  // İstediğiniz şekilde resmi saklayabilirsiniz
+  // Örneğin:
+  localStorage.setItem(`productImage_${productId}`, imageUrl);
 }
 
 function saveCartToLocalStorage(productName, size, price, imageUrl) {
@@ -219,8 +223,11 @@ function updateTotalPrice() {
       console.error("Price element not found in cart item.");
       continue; // Geçerli ürünün fiyatı alınamazsa sonraki ürüne geç
     }
-
+    
     let priceText = priceElement.innerText;
+    
+    // ... Diğer kodlar
+    
 
     if (!priceText.includes(" TL")) {
       console.error("Invalid price format:", priceText);
