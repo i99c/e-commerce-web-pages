@@ -32,7 +32,14 @@ function changeQuantity(productId, change) {
   updateTotalPrice();
 }
 
-function updateCartContent(productId, productName, size, price, imageUrl, quantity) {
+function updateCartContent(
+  productId,
+  productName,
+  size,
+  price,
+  imageUrl,
+  quantity
+) {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
   itemCountElement.innerText = currentItemCount + 1;
@@ -44,6 +51,7 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
 
   // İlgili öğeyi kontrol et
   let formattedPrice = price !== undefined ? `${parseFloat(price).toFixed(2)} TL` : "0.00 TL";
+
   newItem.innerHTML = `
   <div class="col-md-3">
       <img src="${imageUrl}" alt="products" class="img-fluid">
@@ -66,6 +74,7 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
   </div>
 `;
 
+
   // Yeni ürünü, totalSection'dan önce eklemek için
   cartList.insertBefore(newItem, totalSection);
 
@@ -76,7 +85,6 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
   saveImageToLocalStorage(productId, imageUrl);
 }
 
-
 function removeCartItem(productId, imageUrl) {
   let cartItem = document.getElementById(`cartItem_${productId}`);
   cartItem.remove();
@@ -84,11 +92,8 @@ function removeCartItem(productId, imageUrl) {
   removeFromLocalStorage(productId);
   updateCartCount();
   updateTotalPrice();
-  imageUrl()
+  imageUrl();
 }
-
-
-
 
 function removeFromLocalStorage(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
@@ -109,10 +114,8 @@ function saveImageToLocalStorage(productId, imageUrl) {
   // Örneğin:
   localStorage.setItem(`productImage_${productId}`, imageUrl);
 }
-
-function saveCartToLocalStorage(productName, size, price, imageUrl) {
+function saveCartToLocalStorage(productId, productName, size, price, imageUrl) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
-  let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem("cartData", JSON.stringify(cartData));
 }
@@ -138,23 +141,34 @@ window.onload = function () {
   updateCartFromLocalStorage();
 };
 
+window.onbeforeunload = function () {
+  // Sayfadan ayrılmadan önce sepeti localStorage'a kaydet
+  addExtraProducts();
+  saveCartToLocalStorage();
+};
+
+
 function updateCartFromLocalStorage() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
   for (let productId in cartData) {
     let { productName, size, price, imageUrl } = cartData[productId];
-    updateCartContent(productId, productName, size, price !== undefined ? price : 0, imageUrl);
+    updateCartContent(
+      productId,
+      productName,
+      size,
+      price !== undefined ? price : 0,
+      imageUrl
+    );
   }
 }
-
 
 function addExtraProducts() {
   let productElements = document.querySelectorAll(".product");
   productElements.forEach((productElement) => {
     let productName = productElement.querySelector(".product-name").innerText;
     let size = productElement.querySelector(".product-size").innerText;
-    let price = parseFloat(
-      productElement.querySelector(".product-price").innerText
-    );
+    let price = parseFloat(priceText.replace(" TL", ""));
+
     let imageUrl = productElement
       .querySelector(".product-image")
       .getAttribute("src");
@@ -244,7 +258,7 @@ function updateTotalPrice() {
       continue; // Geçerli fiyat formatı değilse sonraki ürüne geç
     }
 
-    let price = parseFloat(priceText.replace(" TL", ""));
+    let price = parseFloat(priceText.replace(" TL", "").replace(",", ""));
 
     if (isNaN(price)) {
       console.error("Invalid price value:", priceText);
