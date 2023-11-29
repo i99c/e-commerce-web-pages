@@ -5,71 +5,72 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Odeme Sayfası</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <div class="container">
         <main>
           <div class="py-5 text-center">
-            <img class="d-block mx-auto mb-4" src="/docs/5.3/assets/brand/bootstrap-logo.svg" alt="" width="72" height="57">
-            <h2>Checkout form</h2>
-            <p class="lead">Below is an example form built entirely with Bootstrap’s form controls. Each required form group has a validation state that can be triggered by attempting to submit the form without completing it.</p>
+            <img class="d-block mx-auto mb-4" src="./logo/YENİ LOGO.png" alt="" width="72" height="57">
+            <h2>ÖDEME SAYFASI</h2>
+            <p class="lead">Satın alma işlemini tamamlamak için aşağıdaki boş alanları doldurunuz.</p>
           </div>
       
           <div class="row g-5">
             <div class="col-md-5 col-lg-4 order-md-last">
               <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-primary">Your cart</span>
+                <span class="text-primary">Sepetiniz :</span>
                 <span class="badge bg-primary rounded-pill">3</span>
               </h4>
               <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Product name</h6>
-                    <small class="text-body-secondary">Brief description</small>
+                    <h6 class="my-0">Ürün Adı</h6>
+                    <small class="text-body-secondary">Ürün Açıklaması:</small>
                   </div>
                   <span class="text-body-secondary">$12</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Second product</h6>
-                    <small class="text-body-secondary">Brief description</small>
+                    <h6 class="my-0">Ürün Adı</h6>
+                    <small class="text-body-secondary">Ürün Açıklaması:</small>
                   </div>
                   <span class="text-body-secondary">$8</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Third item</h6>
-                    <small class="text-body-secondary">Brief description</small>
+                    <h6 class="my-0">Ürün Adı</h6>
+                    <small class="text-body-secondary">Ürün Açıklaması:</small>
                   </div>
                   <span class="text-body-secondary">$5</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between bg-body-tertiary">
                   <div class="text-success">
-                    <h6 class="my-0">Promo code</h6>
+                    <h6 class="my-0">Promosyon Kodu</h6>
                     <small>EXAMPLECODE</small>
                   </div>
                   <span class="text-success">−$5</span>
                 </li>
                 <li class="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
-                  <strong>$20</strong>
+                  <span>Toplam</span>
+                  <strong class="total"></strong>
                 </li>
               </ul>
       
               <form class="card p-2">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Promo code">
-                  <button type="submit" class="btn btn-secondary">Redeem</button>
+                  <button type="submit" class="btn btn-secondary">Onayla</button>
                 </div>
               </form>
             </div>
             <div class="col-md-7 col-lg-8">
-              <h4 class="mb-3">Billing address</h4>
+              <h4 class="mb-3">Müşteri Adresi</h4>
               <form class="needs-validation" novalidate="">
                 <div class="row g-3">
                   <div class="col-sm-6">
-                    <label for="firstName" class="form-label">First name</label>
+                    <label for="firstName" class="form-label">İsim</label>
                     <input type="text" class="form-control" id="firstName" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                       Valid first name is required.
@@ -77,7 +78,7 @@
                   </div>
       
                   <div class="col-sm-6">
-                    <label for="lastName" class="form-label">Last name</label>
+                    <label for="lastName" class="form-label">Soyisim</label>
                     <input type="text" class="form-control" id="lastName" placeholder="" value="" required="">
                     <div class="invalid-feedback">
                       Valid last name is required.
@@ -85,7 +86,7 @@
                   </div>
       
                   <div class="col-12">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label">Kullanıcı Adı</label>
                     <div class="input-group has-validation">
                       <span class="input-group-text">@</span>
                       <input type="text" class="form-control" id="username" placeholder="Username" required="">
@@ -96,7 +97,7 @@
                   </div>
       
                   <div class="col-12">
-                    <label for="email" class="form-label">Email <span class="text-body-secondary">(Optional)</span></label>
+                    <label for="email" class="form-label">E-mail <span class="text-body-secondary">(Optional)</span></label>
                     <input type="email" class="form-control" id="email" placeholder="you@example.com">
                     <div class="invalid-feedback">
                       Please enter a valid email address for shipping updates.
@@ -104,7 +105,7 @@
                   </div>
       
                   <div class="col-12">
-                    <label for="address" class="form-label">Address</label>
+                    <label for="address" class="form-label">Adres</label>
                     <input type="text" class="form-control" id="address" placeholder="1234 Main St" required="">
                     <div class="invalid-feedback">
                       Please enter your shipping address.
@@ -117,10 +118,13 @@
                   </div>
       
                   <div class="col-md-5">
-                    <label for="country" class="form-label">Country</label>
+                    <label for="country" class="form-label">Ülke</label>
                     <select class="form-select" id="country" required="">
-                      <option value="">Choose...</option>
-                      <option>United States</option>
+                      <option value="">Seçenek...</option>
+                      <option>Türkiye</option>
+                      <option>USA</option>
+                      <option>Austuralia</option>
+                      <option>Canada</option>
                     </select>
                     <div class="invalid-feedback">
                       Please select a valid country.
@@ -128,10 +132,18 @@
                   </div>
       
                   <div class="col-md-4">
-                    <label for="state" class="form-label">State</label>
+                    <label for="state" class="form-label">Şehir</label>
                     <select class="form-select" id="state" required="">
-                      <option value="">Choose...</option>
-                      <option>California</option>
+                      <option value="">Seçenek...</option>
+                      <option>Bursa</option>
+                      <option>İstanbul</option>
+                      <option>Ankara</option>
+                      <option>Eskişehir</option>
+                      <option>Antalya</option>
+                      <option>İzmir</option>
+                      <option>Adana</option>
+                      <option>Mersin</option>
+                      <option>Kütahya</option>
                     </select>
                     <div class="invalid-feedback">
                       Please provide a valid state.
@@ -139,7 +151,7 @@
                   </div>
       
                   <div class="col-md-3">
-                    <label for="zip" class="form-label">Zip</label>
+                    <label for="zip" class="form-label">Semty</label>
                     <input type="text" class="form-control" id="zip" placeholder="" required="">
                     <div class="invalid-feedback">
                       Zip code required.
@@ -151,71 +163,102 @@
       
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="same-address">
-                  <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
+                  <label class="form-check-label" for="same-address">Fatura Adresi İle Aynı</label>
                 </div>
       
                 <div class="form-check">
                   <input type="checkbox" class="form-check-input" id="save-info">
-                  <label class="form-check-label" for="save-info">Save this information for next time</label>
+                  <label class="form-check-label" for="save-info">Bir sonraki alışveriş için bilgilerimi kaydet</label>
                 </div>
       
                 <hr class="my-4">
       
-                <h4 class="mb-3">Payment</h4>
+                <h4 class="mb-3">Ödeme Yöntemi</h4>
       
                 <div class="my-3">
                   <div class="form-check">
                     <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked="" required="">
-                    <label class="form-check-label" for="credit">Credit card</label>
+                    <label class="form-check-label" for="credit">Kredi Kartı</label>
                   </div>
                   <div class="form-check">
                     <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required="">
-                    <label class="form-check-label" for="debit">Debit card</label>
+                    <label class="form-check-label" for="debit">Banka Kartı</label>
                   </div>
                   <div class="form-check">
                     <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required="">
-                    <label class="form-check-label" for="paypal">PayPal</label>
+                    <label class="form-check-label" for="paypal">Havale/EFT/Kapıda Ödeme</label>
                   </div>
                 </div>
-      
-                <div class="row gy-3">
-                  <div class="col-md-6">
-                    <label for="cc-name" class="form-label">Name on card</label>
-                    <input type="text" class="form-control" id="cc-name" placeholder="" required="">
-                    <small class="text-body-secondary">Full name as displayed on card</small>
-                    <div class="invalid-feedback">
-                      Name on card is required
-                    </div>
+                <div class="flip-card">
+                  <div class="flip-card-inner">
+                      <div class="flip-card-front">
+                          <p class="heading_8264">MASTERCARD</p>
+                          <svg class="logo" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="36" height="36" viewBox="0 0 48 48">
+                          <path fill="#ff9800" d="M32 10A14 14 0 1 0 32 38A14 14 0 1 0 32 10Z"></path><path fill="#d50000" d="M16 10A14 14 0 1 0 16 38A14 14 0 1 0 16 10Z"></path><path fill="#ff3d00" d="M18,24c0,4.755,2.376,8.95,6,11.48c3.624-2.53,6-6.725,6-11.48s-2.376-8.95-6-11.48 C20.376,15.05,18,19.245,18,24z"></path>
+                          </svg>
+                          <svg version="1.1" class="chip" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px" height="30px" viewBox="0 0 50 50" xml:space="preserve">  <image id="image0" width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAMAAAAp4XiDAAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                            AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAB6VBMVEUAAACNcTiVeUKVeUOY
+                            fEaafEeUeUSYfEWZfEaykleyklaXe0SWekSZZjOYfEWYe0WXfUWXe0WcgEicfkiXe0SVekSXekSW
+                            ekKYe0a9nF67m12ZfUWUeEaXfESVekOdgEmVeUWWekSniU+VeUKVeUOrjFKYfEWliE6WeESZe0GS
+                            e0WYfES7ml2Xe0WXeESUeEOWfEWcf0eWfESXe0SXfEWYekSVeUKXfEWxklawkVaZfEWWekOUekOW
+                            ekSYfESZe0eXekWYfEWZe0WZe0eVeUSWeETAnmDCoWLJpmbxy4P1zoXwyoLIpWbjvXjivnjgu3bf
+                            u3beunWvkFWxkle/nmDivXiWekTnwXvkwHrCoWOuj1SXe0TEo2TDo2PlwHratnKZfEbQrWvPrWua
+                            fUfbt3PJp2agg0v0zYX0zYSfgkvKp2frxX7mwHrlv3rsxn/yzIPgvHfduXWXe0XuyIDzzISsjVO1
+                            lVm0lFitjVPzzIPqxX7duna0lVncuHTLqGjvyIHeuXXxyYGZfUayk1iyk1e2lln1zYTEomO2llrb
+                            tnOafkjFpGSbfkfZtXLhvHfkv3nqxH3mwXujhU3KqWizlFilh06khk2fgkqsjlPHpWXJp2erjVOh
+                            g0yWe0SliE+XekShhEvAn2D///+gx8TWAAAARnRSTlMACVCTtsRl7Pv7+vxkBab7pZv5+ZlL/UnU
+                            /f3SJCVe+Fx39naA9/75XSMh0/3SSkia+pil/KRj7Pr662JPkrbP7OLQ0JFOijI1MwAAAAFiS0dE
+                            orDd34wAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0IDx2lsiuJAAACLElEQVRIx2Ng
+                            GAXkAUYmZhZWPICFmYkRVQcbOwenmzse4MbFzc6DpIGXj8PD04sA8PbhF+CFaxEU8iWkAQT8hEVg
+                            OkTF/InR4eUVICYO1SIhCRMLDAoKDvFDVhUaEhwUFAjjSUlDdMiEhcOEItzdI6OiYxA6YqODIt3d
+                            I2DcuDBZsBY5eVTr4xMSYcyk5BRUOXkFsBZFJTQnp6alQxgZmVloUkrKYC0qqmji2WE5EEZuWB6a
+                            lKoKdi35YQUQRkFYPpFaCouKIYzi6EDitJSUlsGY5RWVRGjJLyxNy4ZxqtIqqvOxaVELQwZFZdkI
+                            JVU1RSiSalAt6rUwUBdWG1CP6pT6gNqwOrgCdQyHNYR5YQFhDXj8MiK1IAeyN6aORiyBjByVTc0F
+                            qBoKWpqwRCVSgilOaY2OaUPw29qjOzqLvTAchpos47u6EZyYnngUSRwpuTe6D+6qaFQdOPNLRzOM
+                            1dzhRZyW+CZouHk3dWLXglFcFIflQhj9YWjJGlZcaKAVSvjyPrRQ0oQVKDAQHlYFYUwIm4gqExGm
+                            BSkutaVQJeomwViTJqPK6OhCy2Q9sQBk8cY0DxjTJw0lAQWK6cOKfgNhpKK7ZMpUeF3jPa28BCET
+                            amiEqJKM+X1gxvWXpoUjVIVPnwErw71nmpgiqiQGBjNzbgs3j1nus+fMndc+Cwm0T52/oNR9lsdC
+                            S24ra7Tq1cbWjpXV3sHRCb1idXZ0sGdltXNxRateRwHRAACYHutzk/2I5QAAACV0RVh0ZGF0ZTpj
+                            cmVhdGUAMjAyMy0wMi0xM1QwODoxNToyOSswMDowMEUnN7UAAAAldEVYdGRhdGU6bW9kaWZ5ADIw
+                            MjMtMDItMTNUMDg6MTU6MjkrMDA6MDA0eo8JAAAAKHRFWHRkYXRlOnRpbWVzdGFtcAAyMDIzLTAy
+                            LTEzVDA4OjE1OjI5KzAwOjAwY2+u1gAAAABJRU5ErkJggg=="></image>
+                          </svg>
+                          <svg version="1.1" class="contactless" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="0 0 50 50" xml:space="preserve">  <image id="image0" width="50" height="50" x="0" y="0" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAQAAAC0NkA6AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
+                            AAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAAAmJLR0QA/4ePzL8AAAAJcEhZ
+                            cwAACxMAAAsTAQCanBgAAAAHdElNRQfnAg0IEzgIwaKTAAADDklEQVRYw+1XS0iUURQ+f5qPyjQf
+                            lGRFEEFK76koKGxRbWyVVLSOgsCgwjZBJJYuKogSIoOonUK4q3U0WVBWFPZYiIE6kuArG3VGzK/F
+                            fPeMM/MLt99/NuHdfPd888/57jn3nvsQWWj/VcMlvMMd5KRTogqx9iCdIjUUmcGR9ImUYowyP3xN
+                            GQJoRLVaZ2DaZf8kyjEJALhI28ELioyiwC+Rc3QZwRYyO/DH51hQgWm6DMIh10KmD4u9O16K49it
+                            VoPOAmcGAWWOepXIRScAoJZ2Frro8oN+EyTT6lWkkg6msZfMSR35QTJmjU0g15tIGSJ08ZZMJkJk
+                            HpNZgSkyXosS13TkJpZ62mPIJvOSzC1bp8vRhhCakEk7G9/o4gmZdbpsTcKu0m63FbnBP9Qrc15z
+                            bkbemfgNDtEOI8NO5L5O9VYyRYgmJayZ9nPaxZrSjW4+F6Uw9yQqIiIZwhp2huQTf6OIvCZyGM6g
+                            DJBZbyXifJXr7FZjGXsdxADxI7HUJFB6iWvsIhFpkoiIiGTJfjJfiCuJg2ZEspq9EHGVpYgzKqwJ
+                            qSAOEwuJQ/pxPvE3cYltJCLdxBLiSKKIE5HxJKcTRNeadxfhDiuYw44zVs1dxKwRk/uCxIiQkxKB
+                            sSctRVAge9g1E15EHE6yRUaJecRxcWlukdRIbGFOSZCMWQA/iWauIP3slREHXPyliqBcrrD71Amz
+                            Z+rD1Mt2Yr8TZc/UR4/YtFnbijnHi3UrN9vKQ9rPaJf867ZiaqDB+czeKYmd3pNa6fuI75MiC0uX
+                            XSR5aEMf7s7a6r/PudVXkjFb/SsrCRfROk0Fx6+H1i9kkTGn/E1vEmt1m089fh+RKdQ5O+xNJPUi
+                            cUIjO0Dm7HwvErEr0YxeibL1StSh37STafE4I7zcBdRq1DiOkdmlTJVnkQTBTS7X1FYyvfO4piaI
+                            nKbDCDaT2anLudYXCRFsQBgAcIF2/Okwgvz5+Z4tsw118dzruvIvjhTB+HOuWy8UvovEH6beitBK
+                            xDyxm9MmISKCWrzB7bSlaqGlsf0FC0gMjzTg6GgAAAAldEVYdGRhdGU6Y3JlYXRlADIwMjMtMDIt
+                            MTNUMDg6MTk6NTYrMDA6MDCjlq7LAAAAJXRFWHRkYXRlOm1vZGlmeQAyMDIzLTAyLTEzVDA4OjE5
+                            OjU2KzAwOjAw0ssWdwAAACh0RVh0ZGF0ZTp0aW1lc3RhbXAAMjAyMy0wMi0xM1QwODoxOTo1Nisw
+                            MDowMIXeN6gAAAAASUVORK5CYII="></image>
+                          </svg>
+                          <p class="number">9759 2484 5269 6576</p>
+                          <p class="valid_thru">VALID THRU</p>
+                          <p class="date_8264">1 2 / 2 4</p>
+                          <p class="name">BRUCE WAYNE</p>
+                      </div>
+                      <div class="flip-card-back">
+                          <div class="strip"></div>
+                          <div class="mstrip"></div>
+                          <div class="sstrip">
+                            <p class="code">***</p>
+                          </div>
+                      </div>
                   </div>
-      
-                  <div class="col-md-6">
-                    <label for="cc-number" class="form-label">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Credit card number is required
-                    </div>
-                  </div>
-      
-                  <div class="col-md-3">
-                    <label for="cc-expiration" class="form-label">Expiration</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Expiration date required
-                    </div>
-                  </div>
-      
-                  <div class="col-md-3">
-                    <label for="cc-cvv" class="form-label">CVV</label>
-                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required="">
-                    <div class="invalid-feedback">
-                      Security code required
-                    </div>
-                  </div>
-                </div>
-      
-                <hr class="my-4">
-      
-                <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+              </div>
+                <button class="w-100 btn btn-primary btn-lg" type="submit"><a href="loading.html">Continue to checkout</a></button>
               </form>
             </div>
           </div>
@@ -251,16 +294,7 @@
             </ul>
           </div>
       
-        <footer class="my-5 pt-5 text-body-secondary text-center text-small">
-          <p class="mb-1">© 2017–2023 Company Name</p>
-          <ul class="list-inline">
-            <li class="list-inline-item"><a href="#">Privacy</a></li>
-            <li class="list-inline-item"><a href="#">Terms</a></li>
-            <li class="list-inline-item"><a href="#">Support</a></li>
-          </ul>
-        </footer>
-      </div>
-    
+       
 
 
       <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>

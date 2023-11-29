@@ -1,4 +1,10 @@
 function addToCart(productName, size, price, imageUrl) {
+  // Ürün fiyatı kontrolü ekleniyor
+  if (isNaN(price)) {
+    console.error("Invalid price value:", price);
+    return;
+  }
+
   let productId = `${productName.replace(/\s/g, "")}_${size}`;
   let existingItem = document.getElementById(`cartItem_${productId}`);
 
@@ -37,31 +43,28 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
   newItem.classList.add("row", "align-items-center", "text-white-50");
 
   // İlgili öğeyi kontrol et
-  let priceElement = document.createElement("div");
-  priceElement.classList.add("price");
-  priceElement.innerText = `${price.toFixed(2)} TL`;
-
+  let formattedPrice = price !== undefined ? `${parseFloat(price).toFixed(2)} TL` : "0.00 TL";
   newItem.innerHTML = `
-    <div class="col-md-3">
-        <img src="${imageUrl}" alt="products" class="img-fluid">
-    </div>
-    <div class="col-md-5">
-        <div class="title">${productName} - ${size}</div>
-    </div>
-    <div class="col-md-3">
-        <div class="price">${price.toFixed(2)} TL</div>
-    </div>
-    <div class="col-md-3">
-        <div class="quantity-section">
-            <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
-            <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
-            <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
-        </div>
-    </div>
-    <div class="col-md-1">
-        <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}', '${imageUrl}')"></i>
-    </div>
-  `;
+  <div class="col-md-3">
+      <img src="${imageUrl}" alt="products" class="img-fluid">
+  </div>
+  <div class="col-md-5">
+      <div class="title">${productName} - ${size}</div>
+  </div>
+  <div class="col-md-3">
+      <div class="price">${formattedPrice}</div>
+  </div>
+  <div class="col-md-3">
+      <div class="quantity-section">
+          <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
+          <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
+          <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
+      </div>
+  </div>
+  <div class="col-md-1">
+      <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}', '${imageUrl}')"></i>
+  </div>
+`;
 
   // Yeni ürünü, totalSection'dan önce eklemek için
   cartList.insertBefore(newItem, totalSection);
@@ -74,20 +77,15 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
 }
 
 
-
-
 function removeCartItem(productId, imageUrl) {
   let cartItem = document.getElementById(`cartItem_${productId}`);
   cartItem.remove();
 
   removeFromLocalStorage(productId);
   updateCartCount();
-  updateTotalPrice(); // Toplam tutarı güncelle
-
-  // Eğer resimleri kaldırmak istiyorsanız, aşağıdaki satırı ekleyebilirsiniz
-  // removeImageFromLocalStorage(imageUrl);
+  updateTotalPrice();
+  imageUrl()
 }
-
 
 
 
@@ -99,7 +97,6 @@ function removeFromLocalStorage(productId) {
     localStorage.setItem("cartData", JSON.stringify(cartData));
   }
 }
-
 
 function updateCartCount() {
   let itemCountElement = document.getElementById("item-count");
@@ -120,7 +117,14 @@ function saveCartToLocalStorage(productName, size, price, imageUrl) {
   localStorage.setItem("cartData", JSON.stringify(cartData));
 }
 
+
 function selectSize(productName, size, price, imageUrl) {
+  // Ürün fiyatı kontrolü ekleniyor
+  if (isNaN(price) || price === undefined) {
+    console.error("Invalid price value:", price);
+    return;
+  }
+
   addToCart(productName, size, price, imageUrl);
 }
 
@@ -138,9 +142,10 @@ function updateCartFromLocalStorage() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
   for (let productId in cartData) {
     let { productName, size, price, imageUrl } = cartData[productId];
-    updateCartContent(productName, size, price, imageUrl);
+    updateCartContent(productId, productName, size, price !== undefined ? price : 0, imageUrl);
   }
 }
+
 
 function addExtraProducts() {
   let productElements = document.querySelectorAll(".product");
@@ -169,6 +174,12 @@ function addExtraProducts() {
 // ... (Önceki kodlar)
 
 function addToCart(productName, size, price, imageUrl) {
+  // Ürün fiyatı kontrolü ekleniyor
+  if (isNaN(price) || price === undefined) {
+    console.error("Invalid price value:", price);
+    return;
+  }
+
   let productId = `${productName.replace(/\s/g, "")}_${size}`;
   let existingItem = document.getElementById(`cartItem_${productId}`);
 
@@ -220,14 +231,13 @@ function updateTotalPrice() {
     let priceElement = item.querySelector(".price");
 
     if (!priceElement) {
-      console.error("Price element not found in cart item.");
+      // console.error("Price element not found in cart item.");
       continue; // Geçerli ürünün fiyatı alınamazsa sonraki ürüne geç
     }
-    
+
     let priceText = priceElement.innerText;
-    
+
     // ... Diğer kodlar
-    
 
     if (!priceText.includes(" TL")) {
       console.error("Invalid price format:", priceText);
@@ -247,11 +257,14 @@ function updateTotalPrice() {
   totalElement.innerText = totalPrice.toFixed(2) + " TL";
 }
 
-
-
 // Sepet içinde toplam tutarı gösteren alanın üzerine çizgi ekleyen hr elementi
 let totalSection = document.createElement("div");
-totalSection.classList.add("row", "align-items-center", "text-white-50", "mt-3");
+totalSection.classList.add(
+  "row",
+  "align-items-center",
+  "text-white-50",
+  "mt-3"
+);
 totalSection.innerHTML = `
     <div class="col-md-6"></div>
     <div class="col-md-3">
@@ -267,8 +280,8 @@ let checkoutButton = document.createElement("button");
 checkoutButton.classList.add("btn", "btn-primary", "mt-3");
 checkoutButton.innerText = "Ödeme Yap";
 checkoutButton.addEventListener("click", function () {
-    // Burada ödeme sayfasına yönlendirme işlemini yapabilirsiniz
-    // Örneğin: window.location.href = 'odeme.html';
+  // Burada ödeme sayfasına yönlendirme işlemini yapabilirsiniz
+  // Örneğin: window.location.href = 'odeme.html';
 });
 
 let hrElement = document.createElement("hr");
@@ -279,7 +292,6 @@ cartList.appendChild(totalSection);
 cartList.appendChild(hrElement);
 cartList.appendChild(checkoutButton);
 
-
 checkoutButton.addEventListener("click", function () {
-  window.location.href = 'odeme.html';
+  window.location.href = "odeme.html";
 });
