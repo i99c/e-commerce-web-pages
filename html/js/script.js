@@ -309,3 +309,33 @@ cartList.appendChild(checkoutButton);
 checkoutButton.addEventListener("click", function () {
   window.location.href = "odeme.html";
 });
+
+
+$(document).ready(function () {
+  $("#cartBtn").click(function () {
+    // Sepet butonu tıklanınca, sepet listesini göster/gizle
+    $("#cartList").toggleClass("d-flex");
+  });
+
+  $("#paymentForm").submit(function (event) {
+    // Form gönderimi olayını ele al
+    event.preventDefault();
+
+    // Girilen kredi kartı detaylarını al
+    let cardNumber = $("#cardNumber").val();
+    let expirationDate = $("#expirationDate").val();
+    let cvv = $("#cvv").val();
+
+    // Bu değerleri daha fazla işleme veya doğrulama için kullanabilirsiniz
+    console.log("Kart Numarası: " + cardNumber);
+    console.log("Son Kullanma Tarihi: " + expirationDate);
+    console.log("CVV: " + cvv);
+
+    // Ödeme işlemini gerçekleştirmek için burada mantık ekleyebilirsiniz
+
+    // İsteğe bağlı olarak, loading.html sayfasına yönlendirme yapabilirsiniz
+    window.location.href = "loading.html";
+  });
+});
+
+
