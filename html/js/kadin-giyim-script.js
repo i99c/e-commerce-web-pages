@@ -1,3 +1,9 @@
+/* Sepete yeni bir ürün eklemek için kullanılır.
+Önce ürünün fiyatını kontrol eder ve geçerli değilse bir hata mesajı yazdırır.
+Ürünün benzersiz bir kimliğini (productId) oluşturur.
+Eğer aynı ürün zaten sepette bulunuyorsa, miktarını arttırır (changeQuantity fonksiyonunu çağırarak).
+Eğer ürün sepette yoksa, yeni bir ürün ekler ve updateCartContent fonksiyonunu çağırarak HTML içeriğini günceller.
+Toplam tutarı güncelleyerek ve sepeti kaydederek (saveCartToLocalStorage fonksiyonunu çağırarak) işlemi tamamlar. */
 function addToCart(productName, size, price, imageUrl) {
   // Ürün fiyatı kontrolü ekleniyor
   if (isNaN(price) || price === undefined) {
@@ -23,6 +29,10 @@ function addToCart(productName, size, price, imageUrl) {
   saveCartToLocalStorage();
 }
 
+/* Sepetteki belirli bir ürünün miktarını artırmak veya azaltmak için kullanılır.
+Önce mevcut miktarı alır, ardından değişikliği uygular.
+Fiyatı güncellemek ve sepeti kaydetmek için updateTotalPrice ve saveCartToLocalStorage fonksiyonlarını çağırır. */
+
 function changeQuantity(productId, change) {
   let quantityInput = document.getElementById(`quantityInput_${productId}`);
   let currentQuantity = parseInt(quantityInput.value);
@@ -36,6 +46,11 @@ function changeQuantity(productId, change) {
   // Sepeti kaydet
   saveCartToLocalStorage();
 }
+
+/* Sepet içeriğini güncellemek için kullanılır.
+Sepetin ürün sayısını artırır.
+Yeni bir HTML öğesi oluşturarak sepet listesine ekler.
+Toplam tutarı günceller ve resmi kaydeder. */
 function updateCartContent(productId, productName, size, price, imageUrl, quantity) {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
@@ -81,6 +96,9 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
   saveImageToLocalStorage(productId, imageUrl);
 }
 
+/* Sepetten belirli bir ürünü kaldırmak için kullanılır.
+HTML içeriğinden ilgili ürünü kaldırır.
+LocaleStorage'dan ürünü kaldırır ve toplam tutarı günceller. */
 function removeCartItem(productId, imageUrl) {
   let cartItem = document.getElementById(`cartItem_${productId}`);
   cartItem.remove();
@@ -91,6 +109,7 @@ function removeCartItem(productId, imageUrl) {
   saveCartToLocalStorage(productId, imageUrl); // Ürünü kaldırdıktan sonra localStorage'a kaydet
 }
 
+// LocaleStorage'dan belirli bir ürünü kaldırmak için kullanılır.
 function removeFromLocalStorage(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
   if (cartData.hasOwnProperty(productId)) {
@@ -99,25 +118,27 @@ function removeFromLocalStorage(productId) {
   }
 }
 
+// Sepet içindeki ürün sayısını günceller.
 function updateCartCount() {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
   itemCountElement.innerText = currentItemCount - 1;
 }
 
+// LocaleStorage'a ürün resmini kaydetmek için kullanılır.
 function saveImageToLocalStorage(productId, imageUrl) {
-  // İstediğiniz şekilde resmi saklayabilirsiniz
-  // Örneğin:
+ 
   localStorage.setItem(`productImage_${productId}`, imageUrl);
 }
 
+// LocaleStorage'a sepet verilerini kaydetmek için kullanılır.
 function saveCartToLocalStorage(productId, productName, size, price, imageUrl) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem("cartData", JSON.stringify(cartData));
 }
 
-
+// LocaleStorage'a sepet verilerini kaydetmek için kullanılır.
 function saveCartToLocalStorage() {
   let cartData = {};
   let cartList = document.getElementById("cartList");
@@ -367,3 +388,13 @@ let cartTable = document.getElementById("cart-table");
 // 'total-price' ID'sine sahip HTML elemanı bulunuyor
 let totalPrice = document.getElementById("total-price");
 
+
+
+
+  function openModal() {
+    document.getElementById('duyuruModal').style.display = 'block';
+  }
+
+  function closeModal() {
+    document.getElementById('duyuruModal').style.display = 'none';
+  }
