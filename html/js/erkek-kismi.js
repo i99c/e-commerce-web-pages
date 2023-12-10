@@ -1,7 +1,7 @@
 function addToCart(productName, size, price, imageUrl) {
   // Ürün fiyatı kontrolü ekleniyor
-  if (isNaN(price)) {
-    console.error("Invalid price value:", price);
+  if (isNaN(price) || price === undefined) {
+    console.error("Geçersiz fiyat değeri:", price);
     return;
   }
 
@@ -14,12 +14,15 @@ function addToCart(productName, size, price, imageUrl) {
   } else {
     // Yeni ürünü sepete ekle
     updateCartContent(productId, productName, size, price, imageUrl, 1);
-    saveCartToLocalStorage(productId, productName, size, price, imageUrl, 1);
+    saveCartToLocalStorage(productId, productName, size, price, imageUrl);
   }
 
-  // Toplam tutarı güncelle
   updateTotalPrice();
+
+  // Sepeti kaydet
+  saveCartToLocalStorage();
 }
+
 
 function changeQuantity(productId, change) {
   let quantityInput = document.getElementById(`quantityInput_${productId}`);
@@ -30,6 +33,9 @@ function changeQuantity(productId, change) {
 
   // Fiyatı güncelleme işlemi
   updateTotalPrice();
+
+  // Sepeti kaydet
+  saveCartToLocalStorage();
 }
 
 function updateCartContent(productId, productName, size, price, imageUrl, quantity) {
@@ -44,27 +50,28 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
 
   // İlgili öğeyi kontrol et
   let formattedPrice = price !== undefined ? `${parseFloat(price).toFixed(2)} TL` : "0.00 TL";
+
   newItem.innerHTML = `
-  <div class="col-md-3">
+    <div class="col-md-3">
       <img src="${imageUrl}" alt="products" class="img-fluid">
-  </div>
-  <div class="col-md-5">
+    </div>
+    <div class="col-md-5">
       <div class="title">${productName} - ${size}</div>
-  </div>
-  <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
       <div class="price">${formattedPrice}</div>
-  </div>
-  <div class="col-md-3">
+    </div>
+    <div class="col-md-3">
       <div class="quantity-section">
-          <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
-          <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
-          <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
+        <button class="quantity-button" onclick="changeQuantity('${productId}', 1)">+</button>
+        <input type="number" class="quantity-input" id="quantityInput_${productId}" value="${quantity}" min="1">
+        <button class="quantity-button" onclick="changeQuantity('${productId}', -1)">-</button>
       </div>
-  </div>
-  <div class="col-md-1">
+    </div>
+    <div class="col-md-1">
       <i class="fa-solid fa-trash" style="color: #ffffff; cursor: pointer;" onclick="removeCartItem('${productId}', '${imageUrl}')"></i>
-  </div>
-`;
+    </div>
+  `;
 
   // Yeni ürünü, totalSection'dan önce eklemek için
   cartList.insertBefore(newItem, totalSection);
@@ -76,19 +83,15 @@ function updateCartContent(productId, productName, size, price, imageUrl, quanti
   saveImageToLocalStorage(productId, imageUrl);
 }
 
-
 function removeCartItem(productId, imageUrl) {
   let cartItem = document.getElementById(`cartItem_${productId}`);
   cartItem.remove();
 
-  removeFromLocalStorage(productId);
+  removeFromLocalStorage(productId, imageUrl);
   updateCartCount();
   updateTotalPrice();
-  imageUrl()
+  saveCartToLocalStorage(productId, imageUrl); // Ürünü kaldırdıktan sonra localStorage'a kaydet
 }
-
-
-
 
 function removeFromLocalStorage(productId) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
@@ -110,18 +113,56 @@ function saveImageToLocalStorage(productId, imageUrl) {
   localStorage.setItem(`productImage_${productId}`, imageUrl);
 }
 
-function saveCartToLocalStorage(productName, size, price, imageUrl) {
+function saveCartToLocalStorage(productId, productName, size, price, imageUrl) {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
-  let productId = Date.now().toString();
   cartData[productId] = { productName, size, price, imageUrl };
   localStorage.setItem("cartData", JSON.stringify(cartData));
 }
 
 
+function saveCartToLocalStorage() {
+  let cartData = {};
+  let cartList = document.getElementById("cartList");
+  if (!cartList) {
+    console.error("cartList bulunamadı.");
+    return;
+  }
+
+  let cartItems = cartList.getElementsByClassName("row");
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let item = cartItems[i];
+    let productId = item.id.replace("cartItem_", "");
+    let titleElement = item.querySelector(".title");
+    let priceElement = item.querySelector(".price");
+    let quantityInput = item.querySelector(".quantity-input");
+    let imgElement = item.querySelector("img");
+
+    if (!titleElement || !priceElement || !quantityInput || !imgElement) {
+      console.error("Gerekli öğe cart item içinde bulunamadı:", item);
+      continue; // Gerekli öğelerden biri eksikse bu öğeyi atla
+    }
+
+    let productName = titleElement.innerText.split(" - ")[0];
+    let size = titleElement.innerText.split(" - ")[1];
+    let priceText = priceElement.innerText;
+    let price = parseFloat(priceText.replace(" TL", "").replace(",", ""));
+    let imageUrl = imgElement.getAttribute("src");
+    let quantity = parseInt(quantityInput.value);
+
+    cartData[productId] = { productName, size, price, imageUrl, quantity };
+  }
+
+  // Verileri localStorage'a kaydet
+  localStorage.setItem("cartData", JSON.stringify(cartData));
+}
+
+
+
 function selectSize(productName, size, price, imageUrl) {
   // Ürün fiyatı kontrolü ekleniyor
   if (isNaN(price) || price === undefined) {
-    console.error("Invalid price value:", price);
+    console.error("Geçersiz fiyat değeri:", price);
     return;
   }
 
@@ -132,19 +173,63 @@ document.getElementById("cartBtn").addEventListener("click", function () {
   let cartList = document.getElementById("cartList");
   cartList.classList.toggle("show");
 });
-
 window.onload = function () {
-  addExtraProducts();
-  updateCartFromLocalStorage();
-};
+  // Sepetteki ürünleri alıyoruz
+  let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
+ 
+  // Sepetteki ürünleri görüntüleme
+  displayCart(cart);
+ };
 
-function updateCartFromLocalStorage() {
+ window.onbeforeunload = function () {
+  // Sayfadan ayrılmadan önce sepeti sessionStorage'a kaydet
+  saveCartToSessionStorage();
+};
+function saveCartToSessionStorage() {
+  let cartData = {};
+  let cartItems = document.getElementById("cartList").getElementsByClassName("row");
+
+  for (let i = 0; i < cartItems.length; i++) {
+    let item = cartItems[i];
+    let productId = item.id.replace("cartItem_", "");
+    let productName = item.querySelector(".title").innerText.split(" - ")[0];
+    let size = item.querySelector(".title").innerText.split(" - ")[1];
+    let priceText = item.querySelector(".price").innerText;
+    let price = parseFloat(priceText.replace(" TL", "").replace(",", ""));
+    let imageUrl = item.querySelector("img").getAttribute("src");
+    let quantity = parseInt(item.querySelector(".quantity-input").value);
+
+    cartData[productId] = { productName, size, price, imageUrl, quantity };
+  }
+
+  // Verileri sessionStorage'a kaydet
+  sessionStorage.setItem("cartData", JSON.stringify(cartData));
+}
+
+function updateCartFromSessionStorage() {
   let cartData = JSON.parse(localStorage.getItem("cartData")) || {};
   for (let productId in cartData) {
-    let { productName, size, price, imageUrl } = cartData[productId];
-    updateCartContent(productId, productName, size, price !== undefined ? price : 0, imageUrl);
+    let { productName, size, price, imageUrl, quantity } = cartData[productId];
+    updateCartContent(
+      productId,
+      productName,
+      size,
+      price !== undefined ? price : 0,
+      imageUrl,
+      quantity
+    );
   }
 }
+
+
+
+
+window.onload = function () {
+  // Sayfa yüklendiğinde sessionStorage'deki sepet verilerini kontrol et
+  updateCartFromSessionStorage();
+};
+
+
 
 
 function addExtraProducts() {
@@ -152,9 +237,15 @@ function addExtraProducts() {
   productElements.forEach((productElement) => {
     let productName = productElement.querySelector(".product-name").innerText;
     let size = productElement.querySelector(".product-size").innerText;
-    let price = parseFloat(
-      productElement.querySelector(".product-price").innerText
-    );
+    let priceText = productElement.querySelector(".product-price").innerText; // Fiyat metnini doğru şekilde al
+
+    console.log("productName:", productName);
+    console.log("size:", size);
+    console.log("priceText:", priceText);
+
+    // Fiyatı düzgün bir şekilde çözümle
+    let price = parseFloat(priceText.replace(" TL", ""));
+
     let imageUrl = productElement
       .querySelector(".product-image")
       .getAttribute("src");
@@ -170,31 +261,6 @@ function addExtraProducts() {
 }
 
 // localStorage.removeItem("cartData"); // "cartData'yı temizlemek için"
-
-// ... (Önceki kodlar)
-
-function addToCart(productName, size, price, imageUrl) {
-  // Ürün fiyatı kontrolü ekleniyor
-  if (isNaN(price) || price === undefined) {
-    console.error("Invalid price value:", price);
-    return;
-  }
-
-  let productId = `${productName.replace(/\s/g, "")}_${size}`;
-  let existingItem = document.getElementById(`cartItem_${productId}`);
-
-  if (existingItem) {
-    // Ürün zaten sepette var, miktarını artır
-    changeQuantity(productId, 1);
-  } else {
-    // Yeni ürünü sepete ekle
-    updateCartContent(productId, productName, size, price, imageUrl, 1);
-    saveCartToLocalStorage(productId, productName, size, price, imageUrl, 1);
-  }
-
-  // Toplam tutarı güncelle
-  updateTotalPrice();
-}
 
 function changeQuantity(productId, change) {
   let quantityInput = document.getElementById(`quantityInput_${productId}`);
@@ -237,14 +303,12 @@ function updateTotalPrice() {
 
     let priceText = priceElement.innerText;
 
-    // ... Diğer kodlar
-
     if (!priceText.includes(" TL")) {
       console.error("Invalid price format:", priceText);
       continue; // Geçerli fiyat formatı değilse sonraki ürüne geç
     }
 
-    let price = parseFloat(priceText.replace(" TL", ""));
+    let price = parseFloat(priceText.replace(" TL", "").replace(",", ""));
 
     if (isNaN(price)) {
       console.error("Invalid price value:", priceText);
@@ -266,14 +330,15 @@ totalSection.classList.add(
   "mt-3"
 );
 totalSection.innerHTML = `
-    <div class="col-md-6"></div>
-    <div class="col-md-3">
-        <div class="total-label">Toplam Tutar:</div>
-    </div>
-    <div class="col-md-3">
-        <div class="total-price" id="total-price">0.00 TL</div>
-    </div>
+  <div class="col-md-6"></div>
+  <div class="col-md-3">
+    <div class="total-label">Toplam Tutar:</div>
+  </div>
+  <div class="col-md-3">
+    <div class="total-price" id="total-price">0.00 TL</div>
+  </div>
 `;
+
 
 // Renkli "Ödeme Yap" butonu
 let checkoutButton = document.createElement("button");
@@ -295,3 +360,11 @@ cartList.appendChild(checkoutButton);
 checkoutButton.addEventListener("click", function () {
   window.location.href = "odeme.html";
 });
+
+
+// 'cart-table' ID'sine sahip HTML tablosu bulunuyor
+let cartTable = document.getElementById("cart-table");
+
+// 'total-price' ID'sine sahip HTML elemanı bulunuyor
+let totalPrice = document.getElementById("total-price");
+
