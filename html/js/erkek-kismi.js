@@ -23,7 +23,6 @@ function addToCart(productName, size, price, imageUrl) {
   saveCartToLocalStorage();
 }
 
-
 function changeQuantity(productId, change) {
   let quantityInput = document.getElementById(`quantityInput_${productId}`);
   let currentQuantity = parseInt(quantityInput.value);
@@ -37,7 +36,6 @@ function changeQuantity(productId, change) {
   // Sepeti kaydet
   saveCartToLocalStorage();
 }
-
 function updateCartContent(productId, productName, size, price, imageUrl, quantity) {
   let itemCountElement = document.getElementById("item-count");
   let currentItemCount = parseInt(itemCountElement.innerText);
@@ -295,10 +293,11 @@ function updateTotalPrice() {
   for (let i = 0; i < cartItems.length; i++) {
     let item = cartItems[i];
     let priceElement = item.querySelector(".price");
+    let quantityInput = item.querySelector(".quantity-input");
 
-    if (!priceElement) {
-      // console.error("Price element not found in cart item.");
-      continue; // Geçerli ürünün fiyatı alınamazsa sonraki ürüne geç
+    if (!priceElement || !quantityInput) {
+      console.error("Price or quantity input element not found in cart item.");
+      continue; // Geçerli ürünün fiyatı veya miktarı alınamazsa sonraki ürüne geç
     }
 
     let priceText = priceElement.innerText;
@@ -309,18 +308,18 @@ function updateTotalPrice() {
     }
 
     let price = parseFloat(priceText.replace(" TL", "").replace(",", ""));
+    let quantity = parseInt(quantityInput.value);
 
-    if (isNaN(price)) {
-      console.error("Invalid price value:", priceText);
+    if (isNaN(price) || isNaN(quantity)) {
+      console.error("Invalid price or quantity value.");
       continue; // Geçerli bir sayı değilse sonraki ürüne geç
     }
 
-    totalPrice += price;
+    totalPrice += price * quantity;
   }
 
   totalElement.innerText = totalPrice.toFixed(2) + " TL";
 }
-
 // Sepet içinde toplam tutarı gösteren alanın üzerine çizgi ekleyen hr elementi
 let totalSection = document.createElement("div");
 totalSection.classList.add(
