@@ -398,3 +398,9 @@ let totalPrice = document.getElementById("total-price");
   function closeModal() {
     document.getElementById('duyuruModal').style.display = 'none';
   }
+
+
+   // JavaScript ile bilgileri ekleyin
+   document.getElementById('displayCardNumber').innerText = document.getElementById('cardNumber').value;
+   document.getElementById('displayExpiryDate').innerText = document.getElementById('expiryDate').value;
+   document.getElementById('displayCvv').innerText = document.getElementById('cvv').value;

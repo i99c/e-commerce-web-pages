@@ -367,3 +367,6 @@ let cartTable = document.getElementById("cart-table");
 // 'total-price' ID'sine sahip HTML elemanı bulunuyor
 let totalPrice = document.getElementById("total-price");
 
+function submitForm() {
+  alert('Form submitted!'); // Bu kısmı kendi işlemlerinizle değiştirebilirsiniz.
+}
