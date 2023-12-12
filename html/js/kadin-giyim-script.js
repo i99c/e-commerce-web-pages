@@ -378,7 +378,7 @@ cartList.appendChild(hrElement);
 cartList.appendChild(checkoutButton);
 
 checkoutButton.addEventListener("click", function () {
-  window.location.href = "odeme.html";
+  window.location.href = "kargo.html";
 });
 
 
@@ -400,7 +400,3 @@ let totalPrice = document.getElementById("total-price");
   }
 
 
-   // JavaScript ile bilgileri ekleyin
-   document.getElementById('displayCardNumber').innerText = document.getElementById('cardNumber').value;
-   document.getElementById('displayExpiryDate').innerText = document.getElementById('expiryDate').value;
-   document.getElementById('displayCvv').innerText = document.getElementById('cvv').value;

@@ -357,7 +357,7 @@ cartList.appendChild(hrElement);
 cartList.appendChild(checkoutButton);
 
 checkoutButton.addEventListener("click", function () {
-  window.location.href = "odeme.html";
+  window.location.href = "kargo.html";
 });
 
 
