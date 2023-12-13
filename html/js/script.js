@@ -188,10 +188,10 @@ function selectSize(productName, size, price, imageUrl) {
   addToCart(productName, size, price, imageUrl);
 }
 
-document.getElementById("cartBtn").addEventListener("click", function () {
-  let cartList = document.getElementById("cartList");
-  cartList.classList.toggle("show");
-});
+// document.getElementById("cartBtn").addEventListener("click", function () {
+//   let cartList = document.getElementById("cartList");
+//   cartList.classList.toggle("show");
+// });
 window.onload = function () {
   // Sepetteki ürünleri alıyoruz
   let cart = JSON.parse(sessionStorage.getItem("cart")) || [];
@@ -388,4 +388,8 @@ let cartTable = document.getElementById("cart-table");
 // 'total-price' ID'sine sahip HTML elemanı bulunuyor
 let totalPrice = document.getElementById("total-price");
 
+
+document.querySelector('.submit-btn').addEventListener('click', function() {
+  window.location.href = 'loading.html';
+});
 

@@ -853,6 +853,8 @@ body {
   border-top-right-radius: 0;
 }
 
+/*! KK Yapısı */
+
 * {
   margin: 0;
   padding: 0;
@@ -954,10 +956,10 @@ body {
   backface-visibility: hidden;
   box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
   padding: 30px;
-  transform:perspective(1000px) rotateY(0deg);
+  transform: perspective(1000px) rotateY(0deg);
   transition: transform .4s ease-out;
-
 }
+
 
 .container .card-container .front .image {
   display: flex;
@@ -1000,8 +1002,8 @@ body {
   padding: 20px 0;
   text-align: right;
   backface-visibility: hidden;
-  box-shadow:0 15px 25px rgba(0, 0, 0, .2) ;
-  transform:perspective(1000px) rotateY(180deg);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+  transform: perspective(1000px) rotateY(180deg);
   transition: transform .4s ease-out;
 }
 
