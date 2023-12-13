@@ -389,4 +389,3 @@ let cartTable = document.getElementById("cart-table");
 let totalPrice = document.getElementById("total-price");
 
 
-
