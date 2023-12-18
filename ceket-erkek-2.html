@@ -91,7 +91,6 @@
                     </li>
                 </ul>
     
-    
                 <header class="p-3 text-bg-dark">
                     <div class="container">
                         <div
@@ -102,13 +101,12 @@
                                     role="img" aria-label="Bootstrap"><use
                                         xlink:href="#bootstrap"></use></svg>
                             </a>
-    
-                            
-    
+
                             <div class="text-end">
                                 <button type="button"
                                     class="btn btn-outline-light me-2">Login</button>
-                                <button type="button" class="btn btn-warning">Sign-up</button>
+                                <button type="button"
+                                    class="btn btn-warning">Sign-up</button>
                             </div>
                         </div>
                     </div>
@@ -127,40 +125,42 @@
                         id="cartList">
                     </div>
                 </div>
-    
+
             </nav>
-       
+
         </nav>
 
         <!-- Ürünler Başlangıç -->
         <div class="container text-center">
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-10">
-                <!-- Ürün 1 -->
+                
                 <!-- Ürün 1 -->
                 <div class="col">
                     <img id="resimbir"
-                        src="https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg"
                         alt>
                     <hr>
-                    <p>600 TL</p>
+                    <div class="price">3000 TL</div>
+                    <hr>
+                    <div>Slim Fit Yünlü Klasik Desenli Ceket</div>
                     <hr>
                     <button class="cta"
-                        onclick="addToCart('Ürün 1', 'S', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">
+                        onclick="addToCart('Slim Fit Yünlü Klasik Desenli Ceket',  3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">
                         <span class="hover-underline-animation"> Sepete Ekle
                         </span>
                     </button>
                     <hr>
                     <div class="size-options">
                         <button class="size-option"
-                            onclick="selectSize('Ürün 1', 'S', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">S</button>
+                            onclick="selectSize('Slim Fit Yünlü Klasik Desenli Ceket', 'S', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">S</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 1', 'M', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">M</button>
+                            onclick="selectSize('Slim Fit Yünlü Klasik Desenli Ceket', 'M', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">M</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 1', 'L', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">L</button>
+                            onclick="selectSize('Slim Fit Yünlü Klasik Desenli Ceket', 'L', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">L</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 1', 'XL', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">XL</button>
+                            onclick="selectSize('Slim Fit Yünlü Klasik Desenli Ceket', 'XL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">XL</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 1', 'XXL', 600, 'https://ktnimg2.mncdn.com/products/2023/07/18/2755079/bd5da9b9-b630-4021-ab0a-aefcb0ca93a9_size708x930.jpg')">XXL</button>
+                            onclick="selectSize('Slim Fit Yünlü Klasik Desenli Ceket', 'XXL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533117/f5c41eb1-e6e2-4f80-8523-2779edf2a9d7_size390x580_quality100_cropCenter.jpg')">XXL</button>
                     </div>
                     <hr>
                 </div>
@@ -168,32 +168,454 @@
                 <!-- Ürün 2 -->
                 <div class="col">
                     <img id="resimiki"
-                        src="https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg"
                         alt>
                     <hr>
-                    <p>800 TL</p>
+                   <div class="price">3500 TL</div>
+                    <hr>
+                    <div>Yünlü Desenli Klasik Ceket</div>
                     <hr>
                     <button class="cta"
-                        onclick="addToCart('Ürün 2', 'S', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">
+                        onclick="addToCart('Yünlü Desenli Klasik Ceket',  3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">
                         <span class="hover-underline-animation"> Sepete Ekle
                         </span>
                     </button>
                     <hr>
                     <div class="size-options">
                         <button class="size-option"
-                            onclick="selectSize('Ürün 2', 'S', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">S</button>
+                            onclick="selectSize('Yünlü Desenli Klasik Ceket', 'S', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">S</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 2', 'M', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">M</button>
+                            onclick="selectSize('Yünlü Desenli Klasik Ceket', 'M', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">M</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 2', 'L', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">L</button>
+                            onclick="selectSize('Yünlü Desenli Klasik Ceket', 'L', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">L</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 2', 'XL', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">XL</button>
+                            onclick="selectSize('Yünlü Desenli Klasik Ceket', 'XL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">XL</button>
                         <button class="size-option"
-                            onclick="selectSize('Ürün 2', 'XXL', 600, 'https://ktnimg2.mncdn.com/products/2023/10/30/2832498/2d8ca280-f0c6-41b2-96fb-8a7e9f0fe41f_size708x930.jpg')">XXL</button>
+                            onclick="selectSize('Yünlü Desenli Klasik Ceket', 'XXL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/10/11/581510/62b7c74c-0433-47d1-94e6-c41bca980eb7_size390x580_quality100_cropCenter.jpg')">XXL</button>
                     </div>
                     <hr>
                 </div>
 
+                <!-- Ürün 3 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">4000 TL</div>
+                    <hr>
+                    <div>Yünlü Desenli Klasik Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart(' Yünlü Desenli Klasik Ceket',  4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize(' Yünlü Desenli Klasik Ceket', 'S', 4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Yünlü Desenli Klasik Ceket', 'M', 4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Yünlü Desenli Klasik Ceket', 'L', 4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Yünlü Desenli Klasik Ceket', 'XL', 4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Yünlü Desenli Klasik Ceket', 'XXL', 4000, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/581515/9d7747c2-becd-4c39-b143-5f0cb7a59508_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 4 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3000 TL</div>
+                    <hr>
+                    <div>Süper Slim Fit Yünlü Çizgili Örme Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Süper Slim Fit Yünlü Çizgili Örme Ceket',  3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Çizgili Örme Ceket', 'S', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Çizgili Örme Ceket', 'M', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Çizgili Örme Ceket', 'L', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Çizgili Örme Ceket', 'XL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Çizgili Örme Ceket', 'XXL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521302/68d2272f-34ad-4cab-ae83-70d826a1d0ab_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 5 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2000 TL</div>
+                    <hr>
+                    <div>Regular Fit Desenli Örme Pamuklu Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Regular Fit Desenli Örme Pamuklu Ceket',  2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Desenli Örme Pamuklu Ceket', 'S', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Desenli Örme Pamuklu Ceket', 'M', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Desenli Örme Pamuklu Ceket', 'L', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Desenli Örme Pamuklu Ceket', 'XL', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Desenli Örme Pamuklu Ceket', 'XXL', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/529598/2c0814ef-a3b2-4633-8289-55b111489b07_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 6 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3500 TL</div>
+                    <hr>
+                    <div>Süper Slim Fit Yünlü Klasik Çizgili Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Süper Slim Fit Yünlü Klasik Çizgili Ceket',  3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Klasik Çizgili Ceket', 'S', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Klasik Çizgili Ceket', 'M', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Klasik Çizgili Ceket', 'L', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Klasik Çizgili Ceket', 'XL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Yünlü Klasik Çizgili Ceket', 'XXL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521686/defc85cf-f156-4e37-acd9-003b1a4fed3e_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 7 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2800 TL</div>
+                    <hr>
+                    <div>Süper Slim Fit Klasik Desenli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Süper Slim Fit Klasik Desenli Ceket',  2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Klasik Desenli Ceket', 'S', 2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Klasik Desenli Ceket', 'M', 2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Klasik Desenli Ceket', 'L', 2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Klasik Desenli Ceket', 'XL', 2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Süper Slim Fit Klasik Desenli Ceket', 'XXL', 2800, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/596883/665e3a8c-619c-45b2-b4eb-d7d1b43b40ef_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 8 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3000 TL</div>
+                    <hr>
+                    <div>Slim Fit Yünlü Klasik Desenli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Slim Fit Yünlü Klasik Desenli Ceket',  3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Siyah Armürlü Blazer Kumaş Ceket', 'S', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Siyah Armürlü Blazer Kumaş Ceket', 'M', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Siyah Armürlü Blazer Kumaş Ceket', 'L', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Siyah Armürlü Blazer Kumaş Ceket', 'XL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Siyah Armürlü Blazer Kumaş Ceket', 'XXL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521343/50ce90c3-6454-4064-9650-7a9d6548c7f4_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 9 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3500 TL</div>
+                    <hr>
+                    <div>Slim Fit Yünlü Spor Örme Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Slim Fit Yünlü Spor Örme Ceket',  3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Yünlü Spor Örme Ceket', 'S', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Yünlü Spor Örme Ceket', 'M', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Yünlü Spor Örme Ceket', 'L', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Yünlü Spor Örme Ceket', 'XL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Yünlü Spor Örme Ceket', 'XXL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/12/04/521258/f523df45-2763-4cbd-886a-6281ee0df9c6_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 10 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2500 TL</div>
+                    <hr>
+                    <div>Klasik Desenli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart(' Klasik Desenli Ceket',  2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize(' Klasik Desenli Ceket', 'S', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Klasik Desenli Ceket', 'M', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Klasik Desenli Ceket', 'L', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Klasik Desenli Ceket', 'XL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize(' Klasik Desenli Ceket', 'XXL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/24/533513/dd3f52f4-6cd0-4f74-b614-9225c684877f_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 11 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2000 TL</div>
+                    <hr>
+                    <div>Regular Fit Ekose Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Regular Fit Ekose Ceket', 2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'S',2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'M',2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'L',2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'XL',2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'XXL',2000, 'https://004406.cdn.akinoncloud.com/products/2023/03/02/480465/64bb6eaf-b76a-43e5-ac82-adf9bc6b66e7_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 12 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3000 TL</div>
+                    <hr>
+                    <div>Yünlü Klasik Desenli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Yünlü Klasik Desenli Ceket',  3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Yünlü Klasik Desenli Ceket', 'S', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Yünlü Klasik Desenli Ceket', 'M', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Yünlü Klasik Desenli Ceket', 'L', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Yünlü Klasik Desenli Ceket', 'XL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Yünlü Klasik Desenli Ceket', 'XXL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/09/18/533004/7c10ac6e-4167-4729-9bf8-44dc5577c6f8_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 13 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2500 TL</div>
+                    <hr>
+                    <div>Süper Slim Fit Yünlü Desenli Spor Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Regular Fit Kahverengi Ekose Kumaş Ceket',  2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Kahverengi Ekose Kumaş Ceket', 'S', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Kahverengi Ekose Kumaş Ceket', 'M', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Kahverengi Ekose Kumaş Ceket', 'L', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Kahverengi Ekose Kumaş Ceket', 'XL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Kahverengi Ekose Kumaş Ceket', 'XXL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/10/12/533494/59b71771-fc66-4a13-a68f-534cb594e4b2_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 14 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3000 TL</div>
+                    <hr>
+                    <div>Regular Fit Ekose Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Regular Fit Ekose Ceket',  3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'S', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'M', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'L', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'XL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Ekose Ceket', 'XXL', 3000, 'https://004406.cdn.akinoncloud.com/products/2023/10/17/581796/612e5914-829c-4131-a058-e1ea11e07067_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 15 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">3500 TL</div>
+                    <hr>
+                    <div>Regular Fit Yünlü Kareli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Regular Fit Yünlü Kareli Ceket',  3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Yünlü Kareli Ceket', 'S', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Yünlü Kareli Ceket', 'M', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Yünlü Kareli Ceket', 'L', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Yünlü Kareli Ceket', 'XL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Regular Fit Yünlü Kareli Ceket', 'XXL', 3500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521883/ebcf124f-2ec5-4cb4-9af9-3c53119728a2_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
+                <!-- Ürün 16 -->
+                <div class="col">
+                    <img id="resimiki"
+                        src="https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg"
+                        alt>
+                    <hr>
+                   <div class="price">2500 TL</div>
+                    <hr>
+                    <div>Slim Fit Desenli Ceket</div>
+                    <hr>
+                    <button class="cta"
+                        onclick="addToCart('Slim Fit Desenli Ceket',  2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">
+                        <span class="hover-underline-animation"> Sepete Ekle
+                        </span>
+                    </button>
+                    <hr>
+                    <div class="size-options">
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Desenli Ceket', 'S', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">S</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Desenli Ceket', 'M', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">M</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Desenli Ceket', 'L', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">L</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Desenli Ceket', 'XL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">XL</button>
+                        <button class="size-option"
+                            onclick="selectSize('Slim Fit Desenli Ceket', 'XXL', 2500, 'https://004406.cdn.akinoncloud.com/products/2023/11/23/521268/2b5adf58-e809-482f-90a5-b529819079c8_size390x580_quality100_cropCenter.jpg')">XXL</button>
+                    </div>
+                    <hr>
+                </div>
                 <!-- Diğer Ürünler -->
 
             </div>
