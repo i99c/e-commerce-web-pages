@@ -391,12 +391,5 @@ let totalPrice = document.getElementById("total-price");
 
 
 
-  function openModal() {
-    document.getElementById('duyuruModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('duyuruModal').style.display = 'none';
-  }
-
+ 
 

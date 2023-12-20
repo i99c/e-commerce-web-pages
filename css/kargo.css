@@ -1,0 +1,50 @@
+body {
+    background-color: #f3efef;
+    color: rgb(48, 33, 33);
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: #3498db;
+}
+
+#shippingCartList {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.cart-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.cart-item img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.total-section {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+}
+
+.total-label {
+    margin-right: 10px;
+}
+
+hr {
+    border-color: white;
+    margin-top: 20px;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}

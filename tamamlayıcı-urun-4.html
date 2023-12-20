@@ -1,124 +1,537 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tamamlayıcı Ürünler</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/tamamlayici-urunler.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img
-                    src="./logo/YENİ LOGO.png" alt="logo"></a>
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"
-                        href="index.html">Anasayfa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kadin.html">Kadın</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Kadın Giyim
-                    </a>
-                    <ul id="boyut" class="dropdown-menu">
-                        <li><a class="dropdown-item" href="elbise.html">Elbise</a></li>
-                        <li><a class="dropdown-item" href="etek.html">Etek</a></li>
-                        <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
-                        <li><a class="dropdown-item" href="ceket.html">Ceket</a></li>
-                        <li><a class="dropdown-item"
-                                href="ofis-sikligi.html">Ofis şıklığı</a></li>
-                        <li><a class="dropdown-item" href="pantolon.html">Pantolon</a></li>
-                        <li><a class="dropdown-item" href="yelek.html">Yelek</a></li>
-                        <li><a class="dropdown-item" href="gomlek.html">Gömlek</a></li>
-                        <li><a class="dropdown-item" href="party.html">Party</a></li>
-                        <li><a class="dropdown-item"
-                                href="kadin-ayakkabi.html">Ayakkabı</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="erkek.html">Erkek</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Erkek Giyim
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="jeans-erkek.html">Jeans</a></li>
-                        <li><a class="dropdown-item" href="ceket-erkek.html">Ceket</a></li>
-                        <li><a class="dropdown-item"
-                                href="pantolon-erkek.html">Pantolon</a></li>
-                        <li><a class="dropdown-item"
-                                href="gomlek-erkek.html">Gömlek</a></li>
-                        <li><a class="dropdown-item"
-                                href="erkek-ayakkabı.html">Ayakkabı</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Tamamlayıcı Ürünler
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="tamamlayıcı-urun.html">Tamamlayıcı Ürünler</a></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-
-            <header class="p-3 text-bg-dark">
-                <div class="container">
-                    <div
-                        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/"
-                            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32"
-                                role="img" aria-label="Bootstrap"><use
-                                    xlink:href="#bootstrap"></use></svg>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img
+                        src="./logo/YENİ LOGO.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="index.html">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kadin.html">Kadın</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Kadın Giyim
                         </a>
-
-                        
-
-                        <div class="text-end">
-                            <button type="button"
-                                class="btn btn-outline-light me-2">Login</button>
-                            <button type="button" class="btn btn-warning">Sign-up</button>
+                        <ul id="boyut" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="elbise.html">Elbise</a></li>
+                            <li><a class="dropdown-item" href="etek.html">Etek</a></li>
+                            <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
+                            <li><a class="dropdown-item" href="ceket.html">Ceket</a></li>
+                            <li><a class="dropdown-item"
+                                    href="ofis-sikligi.html">Ofis şıklığı</a></li>
+                            <li><a class="dropdown-item" href="pantolon.html">Pantolon</a></li>
+                            <li><a class="dropdown-item" href="yelek.html">Yelek</a></li>
+                            <li><a class="dropdown-item" href="gomlek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item" href="party.html">Party</a></li>
+                            <li><a class="dropdown-item"
+                                    href="kadin-ayakkabi.html">Ayakkabı</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="erkek.html">Erkek</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Erkek Giyim
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="jeans-erkek.html">Jeans</a></li>
+                            <li><a class="dropdown-item" href="ceket-erkek.html">Ceket</a></li>
+                            <li><a class="dropdown-item"
+                                    href="pantolon-erkek.html">Pantolon</a></li>
+                            <li><a class="dropdown-item"
+                                    href="gomlek-erkek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item"
+                                    href="erkek-ayakkabı.html">Ayakkabı</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Tamamlayıcı Ürünler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="tamamlayıcı-urun.html">Tamamlayıcı Ürünler</a></li>
+                            
+                        </ul>
+                    </li>
+                </ul>
+    
+                <header class="p-3 text-bg-dark">
+                    <div class="container">
+                        <div
+                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                            <a href="/"
+                                class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                                <svg class="bi me-2" width="40" height="32"
+                                    role="img" aria-label="Bootstrap"><use
+                                        xlink:href="#bootstrap"></use></svg>
+                            </a>
+    
+                            
+    
+                            <div class="text-end">
+                                <button type="button"
+                                    class="btn btn-outline-light me-2">Login</button>
+                                <button type="button" class="btn btn-warning">Sign-up</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </header>
-        </div>
-        <nav class="shopping-card position-relative pe-3 me-3">
-            <div class="shopping-card position-relative">
-                <button type="button"
-                    class="btn-cart btn-bg-light btn-primary position-relative"
-                    id="cartBtn">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="item-count"
-                        class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
-                </button>
-                <div class="shopping-cart-list bg-dark d-none"
-                    id="cartList">
-                </div>
+                </header>
             </div>
-
+            <nav class="shopping-card position-relative pe-3 me-3">
+                <div class="shopping-card position-relative">
+                    <button type="button"
+                        class="btn-cart btn-bg-light btn-primary position-relative"
+                        id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="item-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
+                    </button>
+                    <div class="shopping-cart-list bg-dark d-none"
+                        id="cartList">
+                    </div>
+                </div>
+    
+            </nav>
+      
         </nav>
-  
-    </nav>
-</body>
-</html>
+
+        <!-- Ürünler Başlangıç -->
+        <div id="productContainer">
+            <div class="container text-center">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-10">
+                    <!-- Ürün 1 -->
+
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://004406.cdn.akinoncloud.com/products/2020/11/06/140962/e256a193-7442-4ab2-9381-d16dc3095464_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi', 450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140962/e256a193-7442-4ab2-9381-d16dc3095464_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140962/e256a193-7442-4ab2-9381-d16dc3095464_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                       
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Ürün 2 -->
+                    <div class="col">
+                        <img id="resimiki"
+                            src="https://004406.cdn.akinoncloud.com/products/2020/11/06/140960/7b902b44-e8d8-4f1e-8c7b-9c452d8da876_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140960/7b902b44-e8d8-4f1e-8c7b-9c452d8da876_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140960/7b902b44-e8d8-4f1e-8c7b-9c452d8da876_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                     
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 3 -->
+                    <div class="col">
+                        <img id="resimuc"
+                            src="https://004406.cdn.akinoncloud.com/products/2020/11/06/140965/2f6c5861-4253-462a-bb72-3c20d22c1f30_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140965/2f6c5861-4253-462a-bb72-3c20d22c1f30_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140965/2f6c5861-4253-462a-bb72-3c20d22c1f30_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                      
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 4 -->
+                    <div class="col">
+                        <img id="resimdort"
+                            src="https://004406.cdn.akinoncloud.com/products/2020/11/06/140958/235b1079-11ab-467b-b5f6-d15674dbd78c_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div> Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart(' Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140958/235b1079-11ab-467b-b5f6-d15674dbd78c_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize(' Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2020/11/06/140958/235b1079-11ab-467b-b5f6-d15674dbd78c_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                        
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 5 -->
+                    <div class="col">
+                        <img id="resimbes"
+                            src="https://004406.cdn.akinoncloud.com/products/2021/08/26/216275/a26f0d77-f21e-4468-8edf-27cf227dc192_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2021/08/26/216275/a26f0d77-f21e-4468-8edf-27cf227dc192_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'S', 450, 'https://004406.cdn.akinoncloud.com/products/2021/08/26/216275/a26f0d77-f21e-4468-8edf-27cf227dc192_size390x580_quality100_cropCenter.jpg')">Standart</button>
+               
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 6 -->
+                    <div class="col">
+                        <img id="resimalti"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/263985/eaf352c0-73f0-4e15-9443-24165b310a46_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263985/eaf352c0-73f0-4e15-9443-24165b310a46_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263985/eaf352c0-73f0-4e15-9443-24165b310a46_size390x580_quality100_cropCenter.jpg')">Standart</button>
+    
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 7 -->
+                    <div class="col">
+                        <img id="resimyedi"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/263987/09a8bd94-61fe-4faa-8187-2379a6737657_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263987/09a8bd94-61fe-4faa-8187-2379a6737657_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263987/09a8bd94-61fe-4faa-8187-2379a6737657_size390x580_quality100_cropCenter.jpg')">Standart</button>
+
+                        </div>
+                        <hr>
+                    </div>
+
+                    <!-- Ürün 8 -->
+                    <div class="col">
+                        <img id="resimsekiz"
+                            src="https://004406.cdn.akinoncloud.com/products/2021/08/26/209145/bfb70fdf-54c9-4a91-b16c-c487ee4267ae_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2021/08/26/209145/bfb70fdf-54c9-4a91-b16c-c487ee4267ae_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2021/08/26/209145/bfb70fdf-54c9-4a91-b16c-c487ee4267ae_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                       
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 9 -->
+                    <div class="col">
+                        <img id="resimdokuz"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/09/01/270979/becf4562-655d-4d1e-b8bb-016c0a82d646_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/09/01/270979/becf4562-655d-4d1e-b8bb-016c0a82d646_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/09/01/270979/becf4562-655d-4d1e-b8bb-016c0a82d646_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                      
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 10 -->
+                    <div class="col">
+                        <img id="resimon"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/270983/9964889c-dc8c-4ef0-9b79-4fb2bbf468d3_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/270983/9964889c-dc8c-4ef0-9b79-4fb2bbf468d3_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/270983/9964889c-dc8c-4ef0-9b79-4fb2bbf468d3_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                      
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 11 -->
+                    <div class="col">
+                        <img id="resimonbir"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/263988/30f613a9-792b-4e08-988d-6757a695f4bc_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263988/30f613a9-792b-4e08-988d-6757a695f4bc_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263988/30f613a9-792b-4e08-988d-6757a695f4bc_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                      
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 12 -->
+                    <div class="col">
+                        <img id="resimoniki"
+                            src="https://004406.cdn.akinoncloud.com/products/2021/09/23/218083/0e84d1b6-c5c3-43ba-a06a-2b29a3b431a9_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2021/09/23/218083/0e84d1b6-c5c3-43ba-a06a-2b29a3b431a9_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2021/09/23/218083/0e84d1b6-c5c3-43ba-a06a-2b29a3b431a9_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                         
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 13 -->
+                    <div class="col">
+                        <img id="resimonuc"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/263986/8d4e6f30-58a3-4ee5-bc19-70fcae8df18f_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263986/8d4e6f30-58a3-4ee5-bc19-70fcae8df18f_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'S', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263986/8d4e6f30-58a3-4ee5-bc19-70fcae8df18f_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                      
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 14 -->
+                    <div class="col">
+                        <img id="resimondort"
+                            src="https://004406.cdn.akinoncloud.com/products/2021/11/30/231862/d2268e61-9818-44a5-9d4c-b76d50014f41_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2021/11/30/231862/d2268e61-9818-44a5-9d4c-b76d50014f41_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2021/11/30/231862/d2268e61-9818-44a5-9d4c-b76d50014f41_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                          
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 15 -->
+                    <div class="col">
+                        <img id="resimonbes"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/09/21/442275/fb3f3866-0479-4841-bcce-102869d8ddc3_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi',  450, 'https://004406.cdn.akinoncloud.com/products/2022/09/21/442275/fb3f3866-0479-4841-bcce-102869d8ddc3_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kol Düğmesi', 'Standart', 450, 'https://004406.cdn.akinoncloud.com/products/2022/09/21/442275/fb3f3866-0479-4841-bcce-102869d8ddc3_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                          
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 16 -->
+                    <div class="col">
+                        <img id="resimonalti"
+                            src="https://004406.cdn.akinoncloud.com/products/2022/06/17/263995/26578108-f03f-4ccf-9b9b-6ee5e745fb36_size390x580_quality100_cropCenter.jpg"
+                            alt>
+                        <hr>
+                     <div class="price">450 TL</div>
+                        <hr>
+                        <div>Kol Düğmesi</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kol Düğmesi', 450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263995/26578108-f03f-4ccf-9b9b-6ee5e745fb36_size390x580_quality100_cropCenter.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option me-auto"
+                                onclick="selectSize('Kol Düğmesi', 'Standart',450, 'https://004406.cdn.akinoncloud.com/products/2022/06/17/263995/26578108-f03f-4ccf-9b9b-6ee5e745fb36_size390x580_quality100_cropCenter.jpg')">Standart</button>
+                            
+                        </div>
+                        <hr>
+
+                    </div>
+
+                    <!-- Ürünler Bitiş -->
+              
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="tamamlayıcı-urun.html">1</a></li>
+                          <li class="page-item"><a class="page-link" href="tamamlayıcı-urun-2.html">2</a></li>
+                          <li class="page-item"><a class="page-link" href="tamamlayıcı-urun-3.html">3</a></li>
+                          <li class="page-item"><a class="page-link" href="tamamlayıcı-urun-4.html">4</a></li>
+                         
+                          <li class="page-item">
+                            <a class="page-link" href="tamamlayıcı-urun-2.html" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+
+                    <script src="./js/tamamlayıcı-urun.js"></script>
+                    <script
+                        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+                        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+                        crossorigin="anonymous"></script>
+                </body>
+            </html>
