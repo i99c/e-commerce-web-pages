@@ -1,160 +1,645 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Erkek Ayakkabı</title>
-    <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-<link rel="stylesheet" href="./css/erkek-kismi.css">
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img
-                    src="./logo/YENİ LOGO.png" alt="logo"></a>
-            <button class="navbar-toggler" type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page"
-                        href="index.html">Anasayfa</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="kadin.html">Kadın</a>
-                </li>
-                <li class="nav-item dropdown ">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Kadın Giyim
-                    </a>
-                    <ul id="boyut" class="dropdown-menu">
-                        <li><a class="dropdown-item" href="elbise.html">Elbise</a></li>
-                        <li><a class="dropdown-item" href="etek.html">Etek</a></li>
-                        <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
-                        <li><a class="dropdown-item" href="ceket.html">Ceket</a></li>
-                        <li><a class="dropdown-item"
-                                href="ofis-sikligi.html">Ofis şıklığı</a></li>
-                        <li><a class="dropdown-item" href="pantolon.html">Pantolon</a></li>
-                        <li><a class="dropdown-item" href="yelek.html">Yelek</a></li>
-                        <li><a class="dropdown-item" href="gomlek.html">Gömlek</a></li>
-                        <li><a class="dropdown-item" href="party.html">Party</a></li>
-                        <li><a class="dropdown-item"
-                                href="kadin-ayakkabi.html">Ayakkabı</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="erkek.html">Erkek</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Erkek Giyim
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="jeans-erkek.html">Jeans</a></li>
-                        <li><a class="dropdown-item" href="ceket-erkek.html">Ceket</a></li>
-                        <li><a class="dropdown-item"
-                                href="pantolon-erkek.html">Pantolon</a></li>
-                        <li><a class="dropdown-item"
-                                href="gomlek-erkek.html">Gömlek</a></li>
-                        <li><a class="dropdown-item"
-                                href="erkek-ayakkabı.html">Ayakkabı</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#"
-                        role="button" data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        Tamamlayıcı Ürünler
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="tamamlayıcı-urun.html">Tamamlayıcı Ürünler</a></li>
-                        
-                    </ul>
-                </li>
-            </ul>
-
-
-            <header class="p-3 text-bg-dark">
-                <div class="container">
-                    <div
-                        class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                        <a href="/"
-                            class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
-                            <svg class="bi me-2" width="40" height="32"
-                                role="img" aria-label="Bootstrap"><use
-                                    xlink:href="#bootstrap"></use></svg>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Erkek Ayakkabı</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+        <link rel="stylesheet" href="./css/erkek-kismi.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="index.html"><img
+                        src="./logo/YENİ LOGO.png" alt="logo"></a>
+                <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page"
+                            href="index.html">Anasayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="kadin.html">Kadın</a>
+                    </li>
+                    <li class="nav-item dropdown ">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Kadın Giyim
                         </a>
+                        <ul id="boyut" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="elbise.html">Elbise</a></li>
+                            <li><a class="dropdown-item" href="etek.html">Etek</a></li>
+                            <li><a class="dropdown-item" href="jeans.html">Jeans</a></li>
+                            <li><a class="dropdown-item" href="ceket.html">Ceket</a></li>
+                            <li><a class="dropdown-item"
+                                    href="ofis-sikligi.html">Ofis şıklığı</a></li>
+                            <li><a class="dropdown-item" href="pantolon.html">Pantolon</a></li>
+                            <li><a class="dropdown-item" href="yelek.html">Yelek</a></li>
+                            <li><a class="dropdown-item" href="gomlek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item" href="party.html">Party</a></li>
+                            <li><a class="dropdown-item"
+                                    href="kadin-ayakkabi.html">Ayakkabı</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="erkek.html">Erkek</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Erkek Giyim
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="jeans-erkek.html">Jeans</a></li>
+                            <li><a class="dropdown-item" href="ceket-erkek.html">Ceket</a></li>
+                            <li><a class="dropdown-item"
+                                    href="pantolon-erkek.html">Pantolon</a></li>
+                            <li><a class="dropdown-item"
+                                    href="gomlek-erkek.html">Gömlek</a></li>
+                            <li><a class="dropdown-item"
+                                    href="erkek-ayakkabı.html">Ayakkabı</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Tamamlayıcı Ürünler
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="tamamlayıcı-urun.html">Tamamlayıcı
+                                    Ürünler</a></li>
 
-                        
+                        </ul>
+                    </li>
+                </ul>
 
-                        <div class="text-end">
-                            <button type="button"
-                                class="btn btn-outline-light me-2"> <a href="giris.html">Login</a></button>
-                            <button type="button" class="btn btn-warning">Sign-up</button>
+                <header class="p-3 text-bg-dark">
+                    <div class="container">
+                        <div
+                            class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                            <a href="/"
+                                class="d-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none">
+                                <svg class="bi me-2" width="40" height="32"
+                                    role="img" aria-label="Bootstrap"><use
+                                        xlink:href="#bootstrap"></use></svg>
+                            </a>
+
+                            <div class="text-end">
+                                <button type="button"
+                                    class="btn btn-outline-light me-2"> <a
+                                        href="giris.html">Login</a></button>
+                                <button type="button" class="btn btn-warning">Sign-up</button>
+                            </div>
                         </div>
                     </div>
-                </div>
-            </header>
-        </div>
-        <nav class="shopping-card position-relative pe-3 me-3">
-            <div class="shopping-card position-relative">
-                <button type="button"
-                    class="btn-cart btn-bg-light btn-primary position-relative"
-                    id="cartBtn">
-                    <i class="fas fa-shopping-cart"></i>
-                    <span id="item-count"
-                        class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
-                </button>
-                <div class="shopping-cart-list bg-dark d-none"
-                    id="cartList">
-                </div>
+                </header>
             </div>
+            <nav class="shopping-card position-relative pe-3 me-3">
+                <div class="shopping-card position-relative">
+                    <button type="button"
+                        class="btn-cart btn-bg-light btn-primary position-relative"
+                        id="cartBtn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="item-count"
+                            class="position-absolute top-0 start-100 translate-middle badge rounde-pill bg-danger me-2">0</span>
+                    </button>
+                    <div class="shopping-cart-list bg-dark d-none"
+                        id="cartList">
+                    </div>
+                </div>
 
+            </nav>
         </nav>
+           
+        <!-- Ürünler Başlangıç -->
+        <div id="productContainer">
+            <div class="container text-center">
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 gap-10">
+                    <!-- Ürün 1 -->
 
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]"
+                            alt>
+                        <hr>
+                       <div class="price">1130 TL</div>
+                        <hr>
+                        <div>Topuklu Rugan Ayakkabı</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Topuklu Rugan Ayakkabı', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Rugan Ayakkabı', '36', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Rugan Ayakkabı', '37', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Rugan Ayakkabı', '38', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Rugan Ayakkabı', '39L', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Rugan Ayakkabı', '40', 1130, 'https://lp2.hm.com/hmgoepprod?set=source[/f6/35/f635dd9667af8f22e0493ca9ac9e2eb7839c456b.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">40</button>
+                        </div>
+                        <hr>
+                    </div>
 
+                    <!-- Ürün 2 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]"
+                            alt>
+                        <hr>
+                       <div class="price">2000 TL</div>
+                        <hr>
+                        <div>Dizüstü Çizme</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Dizüstü Çizme',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Dizüstü Çizme', '36',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Dizüstü Çizme', '37',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Dizüstü Çizme', '38',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Dizüstü Çizme', '39L',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Dizüstü Çizme', '40',2000, 'https://lp2.hm.com/hmgoepprod?set=source[/7f/e6/7fe63e8204e73c9d227e24ab13c5fc5887a7a317.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 3 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]"
+                            alt>
+                        <hr>
+                       <div class="price">800 TL</div>
+                        <hr>
+                        <div>Sivri Burunlu Arkası Açık Ayakkabı</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Sivri Burunlu Arkası Açık Ayakkabı', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Sivri Burunlu Arkası Açık Ayakkabı', '36', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Sivri Burunlu Arkası Açık Ayakkabı', '37', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Sivri Burunlu Arkası Açık Ayakkabı', '38', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Sivri Burunlu Arkası Açık Ayakkabı', '39L', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Sivri Burunlu Arkası Açık Ayakkabı', '40', 600, 'https://lp2.hm.com/hmgoepprod?set=source[/d5/8a/d58a0812d21176ff0694dfc49665cabfb48cc5a1.jpg],origin[dam],category[],type[DESCRIPTIVESTILLLIFE],res[w],hmver[2]&call=url[file:/product/main]')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 4 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">1700 TL</div>
+                        <hr>
+                        <div>Topuklu Çizme Uzun</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Topuklu Çizme Uzun',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Çizme Uzun', '36',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Çizme Uzun', '37',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Çizme Uzun', '38',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Çizme Uzun', '39L',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Çizme Uzun', '40',1700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-VEDDESLONG/yilan-derisi-desenli-topuklu-cizme_mix-cok-renkli_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 5 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">2600 TL</div>
+                        <hr>
+                        <div>Uzun Deri Çizme</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Uzun Deri Çizme', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Uzun Deri Çizme', '36', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Uzun Deri Çizme', '37', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Uzun Deri Çizme', '38', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Uzun Deri Çizme', '39', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Uzun Deri Çizme', '40', 2600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23k/23KOX-UMRAIN/uzun-deri-cizme_buttercream-bej_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 6 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">600 TL</div>
+                        <hr>
+                        <div>Topuklu Vegan Deri Bot</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Topuklu Vegan Deri Bot', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Vegan Deri Bot', '36', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Vegan Deri Bot', '37', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Vegan Deri Bot', '38', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Vegan Deri Bot', '39L', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Topuklu Vegan Deri Bot', '40', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/22k/22KOX-ERZINDET/topuklu-vegan-deri-bot_oatmeal-bej_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 7 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">700 TL</div>
+                        <hr>
+                        <div>Bağlama Detaylı Topuklu Ayakkabı</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Bağlama Detaylı Topuklu Ayakkabı', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Bağlama Detaylı Topuklu Ayakkabı', '36', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bağlama Detaylı Topuklu Ayakkabı', '37', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bağlama Detaylı Topuklu Ayakkabı', '38', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bağlama Detaylı Topuklu Ayakkabı', '39L', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bağlama Detaylı Topuklu Ayakkabı', '40', 700, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERLACEUP/baglama-detayli-topuklu-ayakkabi_first-tee-yesil_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
 
+                    <!-- Ürün 8 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">600 TL</div>
+                        <hr>
+                        <div>İnce Bantlı Topuklu Terlik</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('İnce Bantlı Topuklu Terlik', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('İnce Bantlı Topuklu Terlik', '36', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('İnce Bantlı Topuklu Terlik', '37', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('İnce Bantlı Topuklu Terlik', '38', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('İnce Bantlı Topuklu Terlik', '39L', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('İnce Bantlı Topuklu Terlik', '40', 600, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-ERPARMIX/ince-bantli-topuklu-terlik_mix-cok-renkli_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 9 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">800 TL</div>
+                        <hr>
+                        <div>Bant Detaylı Topuklu Ayakkabı</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Bant Detaylı Topuklu Ayakkabı', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Bant Detaylı Topuklu Ayakkabı', '36', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bant Detaylı Topuklu Ayakkabı', '37', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bant Detaylı Topuklu Ayakkabı', '38', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bant Detaylı Topuklu Ayakkabı', '39L', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bant Detaylı Topuklu Ayakkabı', '40', 800, 'https://cdn.sorsware.com/oxxo/ContentImages/Product/23y/23YOX-DENSHOES/bant-detayli-topuklu-ayakkabi_rodeo-denim-mavi_1_detay.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 10 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">5600 TL</div>
+                        <hr>
+                        <div>Gri Deri Çizme</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Gri Deri Çizme', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Gri Deri Çizme', '36', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Gri Deri Çizme', '37', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Gri Deri Çizme', '38', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Gri Deri Çizme', '39L', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Gri Deri Çizme', '40', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798003815_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 11 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">2600 TL</div>
+                        <hr>
+                        <div>Kırık Beyaz Deri Stiletto</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Kırık Beyaz Deri Stiletto', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Kırık Beyaz Deri Stiletto', '36', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Kırık Beyaz Deri Stiletto', '37', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Kırık Beyaz Deri Stiletto', '38', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Kırık Beyaz Deri Stiletto', '39L', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Kırık Beyaz Deri Stiletto', '40', 2600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798191055_1.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 12 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">8000 TL</div>
+                        <hr>
+                        <div>Siyah Deri Çizme</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Siyah Deri Çizme', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Çizme', '36', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Çizme', '37', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Çizme', '38', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Çizme', '39L', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Çizme', '40', 8000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798363292_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 13 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">4900 TL</div>
+                        <hr>
+                        <div>Mavi Deri Ayakkabı</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Mavi Deri Ayakkabı',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Mavi Deri Ayakkabı', '36',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mavi Deri Ayakkabı', '37',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mavi Deri Ayakkabı', '38',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mavi Deri Ayakkabı', '39L',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mavi Deri Ayakkabı', '40',4900, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360499_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 14 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">4700 TL</div>
+                        <hr>
+                        <div>Mor Deri Sandalet</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Mor Deri Sandalet', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Mor Deri Sandalet', '36', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mor Deri Sandalet', '37', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mor Deri Sandalet', '38', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mor Deri Sandalet', '39L', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Mor Deri Sandalet', '40', 4700, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798360895_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 15 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">6000 TL</div>
+                        <hr>
+                        <div>Bronz Deri Bot</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Bronz Deri Bot', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Bronz Deri Bot', '36', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bronz Deri Bot', '37', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bronz Deri Bot', '38', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bronz Deri Bot', '39L', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Bronz Deri Bot', '40', 6000, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362394_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
+                    <!-- Ürün 16 -->
+                    <div class="col">
+                        <img id="resimbir"
+                            src="https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg"
+                            alt>
+                        <hr>
+                       <div class="price">5600 TL</div>
+                        <hr>
+                        <div>Siyah Deri Bot</div>
+                        <hr>
+                        <button class="cta"
+                            onclick="addToCart('Siyah Deri Bot', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">
+                            <span class="hover-underline-animation"> Sepete Ekle
+                            </span>
+                        </button>
+                        <hr>
+                        <div class="size-options">
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Bot', '36', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">36</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Bot', '37', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">37</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Bot', '38', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">38</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Bot', '39L', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">39</button>
+                            <button class="size-option"
+                                onclick="selectSize('Siyah Deri Bot', '40', 5600, 'https://img-network.mncdn.com/mnresize/491/775/productimages/8683798362691_2.jpg')">40</button>
+                        </div>
+                        <hr>
+                    </div>
 
-
-
-
-
-        <nav aria-label="Page navigation example">
-            <ul class="pagination">
-              <li class="page-item">
-                <a class="page-link" href="erkek-ayakkabı-2.html" aria-label="Previous">
-                  <span aria-hidden="true">&laquo;</span>
-                </a>
-              </li>
-              <li class="page-item"><a class="page-link" href="erkek-ayakkabı.html">1</a></li>
-              <li class="page-item"><a class="page-link" href="erkek-ayakkabı-2.html">2</a></li>
-              <li class="page-item"><a class="page-link" href="erkek-ayakkabı-3.html">3</a></li>
-              <li class="page-item">
-                <a class="page-link" href="#" aria-label="Next">
-                  <span aria-hidden="true">&raquo;</span>
-                </a>
-              </li>
-            </ul>
-          </nav>
+                    <!-- Ürünler Bitiş -->
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                          <li class="page-item">
+                            <a class="page-link" href="erkek-ayakkabı-2.html" aria-label="Previous">
+                              <span aria-hidden="true">&laquo;</span>
+                            </a>
+                          </li>
+                          <li class="page-item"><a class="page-link" href="erkek-ayakkabı.html">1</a></li>
+                          <li class="page-item"><a class="page-link" href="erkek-ayakkabı-2.html">2</a></li>
+                          <li class="page-item"><a class="page-link" href="erkek-ayakkabı-3.html">3</a></li>
+                          <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                              <span aria-hidden="true">&raquo;</span>
+                            </a>
+                          </li>
+                        </ul>
+                      </nav>
+                 
+                
         <script src="./js/erkek-kismi.js"></script>
         <script
             src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
             crossorigin="anonymous"></script>
-    
-</body>
+
+    </body>
 </html>
