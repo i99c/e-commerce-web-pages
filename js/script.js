@@ -388,15 +388,31 @@ let cartTable = document.getElementById("cart-table");
 // 'total-price' ID'sine sahip HTML elemanı bulunuyor
 let totalPrice = document.getElementById("total-price");
 
+// Videonun DOM öğesini seçin
+let video = document.getElementById("video");
+
+// Videonun oynatılması için bir event listener ekleyin
+video.addEventListener("click", function() {
+    if (video.paused) {
+        video.play(); // Eğer durmuşsa, oynat
+    } else {
+        video.pause(); // Eğer oynatılıyorsa, duraklat
+    }
+});
+
+// Videonun oynama durumunu izleyin ve durum değiştiğinde gerekli işlemleri yapın
+video.addEventListener("play", function() {
+    console.log("Video oynatılıyor");
+});
+
+video.addEventListener("pause", function() {
+    console.log("Video duraklatıldı");
+});
+
+video.addEventListener("ended", function() {
+    console.log("Video tamamlandı");
+});
 
 
-
-  function openModal() {
-    document.getElementById('duyuruModal').style.display = 'block';
-  }
-
-  function closeModal() {
-    document.getElementById('duyuruModal').style.display = 'none';
-  }
-
+ 
 
